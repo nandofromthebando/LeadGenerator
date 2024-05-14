@@ -12,8 +12,7 @@ from kivy.core.window import Window
 from kivy.uix.popup import Popup
 import tkinter as tk
 from tkinter import messagebox
-from textblob import TextBlob
-from newspaper import Article
+
 import subprocess
 from GUI_Features import CustomPopup , SearchPopup 
 class LeadGenerator(App):
