@@ -1,228 +1,283 @@
 # Test Gui imported from another project, going to document as much as possible
 # Maake sure do download all the required dependencies using pip3
 
-from kivy.uix.popup import Popup
-from kivy.uix.label import Label
-from kivy.uix.button import Button
+import os
+from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
-from kivy.uix.dropdown import DropDown
-from kivy.uix.scrollview import ScrollView
-from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
+from kivy.uix.widget import Widget  # Import Widget for separators
+from kivy.core.window import Window
+from kivy.uix.popup import Popup
+import tkinter as tk
+from tkinter import messagebox
+from textblob import TextBlob
+from newspaper import Article
+import subprocess
+from GUI_Features import CustomPopup , AnalyzePopup , Sites_to_Scrape
 
-#Popups from other project refer to documentation.
+class LeadGenerator(App):
 
+    def build(self):
 
-class CustomPopup(Popup):
-    def __init__(self, title, message, **kwargs):
-        super().__init__(**kwargs)
+        # Set window size to match screen dimensions
+        Window.fullscreen = 'auto'
+        # Setting background color
+        Window.clearcolor = (0.133, 0.133, 0.133, 1)
 
-        # For info popups
-        self.title = title
-        self.size_hint = (None, None)
-        self.size = (800, 400)
-        self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
-        self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
+        root_layout = BoxLayout(orientation='vertical', size_hint=(1, 1), padding=20, spacing=10)
+        root_layout.bind(minimum_height=root_layout.setter('height'))
 
-        # Add message label
-        self.message_label = Label(
-            text=message,
-            size_hint=(1, None),
-            height=150,
-            font_size='16sp',
-            color=(1, 1, 1, 1)  # Set text color to dark gray
-        )
+        # Align widgets vertically centered
+        for child in root_layout.children:
+            child.size_hint_y = None
+            child.height = '60dp'  # Set fixed height
+            child.pos_hint = {'center_x': 0.5}  # Center horizontally
 
-        # Add close button
-        self.close_button = Button(
-            text="Close",
-            size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
-            background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
-            color=(1, 1, 1, 1)  # Set button text color to white
-        )
-        self.close_button.bind(on_press=self.dismiss)
+        # Center the layout on the screen
+        root_layout.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
 
-        # Layout setup
-        self.layout = BoxLayout(orientation='vertical', spacing=20, size_hint=(1, None))
-        self.layout.add_widget(self.message_label)
-        self.layout.add_widget(self.close_button)
+        # Menu bar
+        menu_layout = BoxLayout(size_hint=(1, None), padding=10, spacing=10)
 
-        self.content = self.layout
+        # Menu buttons
+        menu_statistics_button = Button(text='Statistics', size_hint=(None, None), size=(250, 60))
+        menu_statistics_button.text_size = menu_statistics_button.size
+        menu_statistics_button.halign = 'center'
+        menu_statistics_button.valign = 'middle'
 
+        menu_preview_data_button = Button(text='Preview Data', size_hint=(None, None), size=(250, 60))
+        menu_preview_data_button.text_size = menu_preview_data_button.size
+        menu_preview_data_button.halign = 'center'
+        menu_preview_data_button.valign = 'middle'
 
+        menu_find_sites_button = Button(text='Find Sites to Scrape', size_hint=(None, None), size=(400, 60))
+        menu_find_sites_button.bind(on_press=self.Find_Sites_to_Scrape)
+        menu_find_sites_button.text_size = menu_find_sites_button.size
+        menu_find_sites_button.halign = 'center'
+        menu_find_sites_button.valign = 'middle'
 
-class AnalyzePopup(Popup):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+        menu_exit_button = Button(text='Exit', size_hint=(None, None), size=(100, 60), on_press=self.quit_app)
+        menu_exit_button.text_size = menu_exit_button.size
+        menu_exit_button.halign = 'center'
+        menu_exit_button.valign = 'middle'
 
-        # Set popup properties
-        self.title = "Please Name and Specify File Type"
-        self.size_hint = (None, None)
-        self.size = (800, 400)
-        self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
-        self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
+        status_bar = Label(text='Ready', size_hint=(1, None), height=60, color=(1, 1, 1, 1))
 
-        # Initialize variables to store user input
-        self.selected_file_type = None
-        self.filename = None
+        menu_layout.add_widget(menu_statistics_button)
+        menu_layout.add_widget(menu_preview_data_button)
+        menu_layout.add_widget(menu_find_sites_button)
+        menu_layout.add_widget(menu_exit_button)
+        menu_layout.add_widget(status_bar)
+        root_layout.add_widget(menu_layout)
 
-        # Add message label
-        self.message_label = Label(
-            text="Input Name and File Type:",
-            size_hint=(1, None),
-            height=150,
-            font_size='16sp',
-            color=(1, 1, 1, 1)  # Set text color to dark gray
-        )
+        # Horizontal separator
+        root_layout.add_widget(Widget(size_hint_y=None, height=5))
 
-        # Add dropdown menu for file type selection
-        self.file_type_dropdown = DropDown()
-        file_types = ['CSV', 'XML', 'XLS']
-        for file_type in file_types:
-            btn = Button(text=file_type, size_hint_y=None, height=40)
-            btn.bind(on_release=lambda btn: self.select_file_type(btn.text))
-            self.file_type_dropdown.add_widget(btn)
+        # Guide message
+        welcome_message = "Welcome to DeepScrape!"
+        welcome_label = Label(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
+        root_layout.add_widget(welcome_label)
 
-        self.file_type_button = Button(text='Select File Type', size_hint=(None, None), size=(150, 50))
-        self.file_type_button.bind(on_release=self.file_type_dropdown.open)
-        self.file_type_dropdown.bind(on_select=self.update_file_type)
+        # Add buttons to create custom popups
+        button1 = Button(text='Start Here', size_hint=(None, None), size=(150, 60))
+        button1.bind(on_press=self.guide_message)
+        button2 = Button(text='Features', size_hint=(None, None), size=(150, 60))
+        button2.bind(on_press=self.Features_Message)
 
-        # Add close button
-        self.save_button = Button(
-            text="Save",
-            size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
-            background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
-            color=(1, 1, 1, 1),  # Set button text color to white
-            on_press=self.save_and_dismiss
-        )
+        buttons_layout = BoxLayout(size_hint=(None, None), size=(300, 120), spacing=10)
+        buttons_layout.add_widget(button1)
+        buttons_layout.add_widget(button2)
+        root_layout.add_widget(buttons_layout)
 
-        # Add close button
-        self.cancel_button = Button(
-            text="Cancel",
-            size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
-            background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
-            color=(1, 1, 1, 1),  # Set button text color to white
-            on_press=self.dismiss
-        )
+        # Horizontal separator
+        root_layout.add_widget(Widget(size_hint_y=None, height=2))
 
-        # User input the file name
-        self.analyze_file_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), size_hint_y=None, height=40)
-        self.analyze_file_entry.bind(text=self.update_filename)
+        url_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
+        url_layout.add_widget(Label(text="Scrape Links:", font_size='24sp', bold=True, color=(1, 1, 1, 1)))
+        self.url_text = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1))
+        url_layout.add_widget(self.url_text)
+        url_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
+        url_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_url_text))
 
-        # Layout setup
-        self.layout = BoxLayout(orientation='vertical', spacing=20, size_hint=(1, None))
-        self.button_layout = BoxLayout(orientation='horizontal', spacing=20, size_hint=(1, None))
-        self.layout.add_widget(self.message_label)
-        self.layout.add_widget(self.analyze_file_entry)
-        self.layout.add_widget(self.file_type_button)
-        self.button_layout.add_widget(self.save_button)
-        self.button_layout.add_widget(self.cancel_button)
-        self.layout.add_widget(self.button_layout)
+        url_buttons_layout.add_widget(Button(text='Analyze', on_press=self.analyze_popup))
+        url_layout.add_widget(url_buttons_layout)
+        root_layout.add_widget(url_layout)
 
-        self.content = self.layout
+        sublink_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
+        sublink_layout.add_widget(Label(text="Scrape For Sublinks:", font_size='18sp', bold=True, color=(1, 1, 1, 1)))
+        self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        sublink_layout.add_widget(self.sublink_url)
 
-    def select_file_type(self, file_type):
-        self.file_type_dropdown.select(file_type)
+        sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
+        sublink_buttons_layout.add_widget(Button(text='Scrape Sublinks', size_hint_y=1, height=60))
+        sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60))
+        sublink_layout.add_widget(sublink_buttons_layout)
 
-    def update_file_type(self, instance, file_type):
-        self.selected_file_type = file_type
+        filename_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
+        filename_layout.add_widget(Label(text="Filename To delete:", font_size='18sp', bold=True, color=(1, 1, 1, 1)))
+        self.csv_filename_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        filename_layout.add_widget(self.csv_filename_entry)
 
-    def update_filename(self, instance, filename):
-        self.filename = filename
+        filename_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
+        filename_buttons_layout.add_widget(Button(text='Delete File', on_press=self.delete_file, size_hint_y=None, height=60))
+        filename_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_csv_input, size_hint_y=None, height=60))
+        filename_layout.add_widget(filename_buttons_layout)
 
-    def save_and_dismiss(self, instance):
-        # Check if both file type and filename are selected
-        if self.selected_file_type and self.filename:
-            self.dismiss((self.filename, self.selected_file_type))
+        root_layout.add_widget(sublink_layout)
+        root_layout.add_widget(filename_layout)
+
+        return root_layout
+
+    def summarize(self, instance):
+            filename = self.analyze_file_entry.text
+            selected_format = self.selected_format.get()
+
+            # Grabs URLs from user and analyzes them
+            urls = self.filename_entry.text.strip().split('\n')
+
+            def save_data(file_format, filename):
+                for url in urls:
+                    if url.strip():
+                        try:
+                            article = Article(url)
+                            article.download()
+                            article.parse()
+                            article.nlp()
+
+                            # Extracting data from the article
+                            article_title = article.title
+                            article_authors = ', '.join(article.authors)
+                            article_publish_date = str(article.publish_date)
+                            article_summary = article.summary
+                            article_text = article.text
+                            analysis = TextBlob(article_text)
+                            article_sentiment = str(analysis.polarity)
+
+                            # Save data to the selected file format with the provided filename
+                            if file_format == 'CSV':
+                                save_titles_to_csv([url], [article_title], [article_authors], [article_publish_date],
+                                                [article_summary], [article_sentiment], f"{filename}.csv")
+                            elif file_format == 'XLS':
+                                save_titles_to_xls([url], [article_title], [article_authors], [article_publish_date],
+                                                [article_summary], [article_sentiment], f"{filename}.xls")
+                            elif file_format == 'XML':
+                                save_titles_to_xml([url], [article_title], [article_authors], [article_publish_date],
+                                                [article_summary], [article_sentiment], f"{filename}.xml")
+
+                        except Exception as e:
+                            print(f"Error processing URL: {url}. Error: {e}")
+                            continue
+
+                    file_path = f"{filename}.csv" if file_format == 'CSV' else (
+                        f"{filename}.xls" if file_format == 'XLS' else f"{filename}.xml")
+                    subprocess.Popen(["open", file_path])  # Opens the saved file
+
+            # Call the save_data function with selected_format and filename
+            save_data(selected_format, filename)
+
+    def scrape_and_display(self):
+        url = self.sublink_url.text
+        sublinks = scrape_the_goods(url)
+        if sublinks:
+            self.url_text.text = '\n'.join(sublinks)
         else:
-            # Show an error message if either file type or filename is missing
-            self.message_label.text = "Please select file type and enter filename"
+            self.url_text.text = "No sublinks found."
 
-class Sites_to_Scrape(Popup):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def clear_url_text(self, instance):
+        self.url_text.text = ''
 
-        # Set popup properties
-        self.title = "News Websites List"
-        self.size_hint = (None, None)
-        self.size = (800, 600)
-        self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
-        self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
+    def clear_linkscraper(self, instance):
+        self.sublink_url.text = ''
 
-        # Create a grid layout for labels
-        grid_layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
-        grid_layout.bind(minimum_height=grid_layout.setter('height'))
+    def clear_csv_input(self, instance):
+        self.csv_filename_entry.text = ''
 
-        # Add labels for each news website link
-        news_sites = [
-            "https://www.bbc.com/news",
-            "https://www.nytimes.com/",
-            "https://edition.cnn.com/",
-            "https://www.theguardian.com/international",
-            "https://www.foxnews.com/",
-            "https://www.nbcnews.com/",
-            "https://www.washingtonpost.com/",
-            "https://www.usatoday.com/",
-            "https://www.reuters.com/",
-            "https://www.bloomberg.com/",
-            "https://www.aljazeera.com/",
-            "https://www.huffpost.com/",
-            "https://www.buzzfeednews.com/",
-            "https://www.independent.co.uk/",
-            "https://www.euronews.com/",
-            "https://apnews.com/",
-            "https://www.rte.ie/news/",
-            "https://timesofindia.indiatimes.com/",
-            "https://www.hindustantimes.com/",
-            "https://www.dawn.com/",
-        ]
-        # Add message label
-        self.message_label = Label(
-            text="Here is a list of common websites:",
-            size_hint=(1, None),
-            height=150,
-            font_size='26sp',
-            color=(1, 1, 1, 1)  # Set text color to dark gray
-        )
+    def delete_file(self, instance):
 
-        # Create a grid layout for labels
-        grid_layout = GridLayout(cols=2, spacing=20, size_hint_y=None)
-        grid_layout.bind(minimum_height=grid_layout.setter('height'))
+        # Function to delete the specified file
+        if os.path.exists((self.csv_filename_entry.text)):
+            os.remove((self.csv_filename_entry.text))
+            popup = CustomPopup("File Deleted", f"File '{os.path.basename((self.csv_filename_entry.text))}' deleted successfully.")
+            popup.open()
+        else:
+            popup = CustomPopup("File Not Found", f"File '{os.path.basename((self.csv_filename_entry.text))}' not found.")
+            popup.open()
 
-        
-        for site in news_sites:
-            label = Label(text=site, font_size='18sp', color=(1, 1, 1, 1), halign='center', valign='middle')
-            grid_layout.add_widget(label)
-            
-        # Create a scroll view to contain the grid layout
-        scroll_view = ScrollView(size_hint=(1, 1))
-        scroll_view.add_widget(grid_layout)
+    def quit_app(self, instance):
+        # Create and display the custom popup
+        intro_message = ("All data in process will be aborted.\n\n\n\n"
+                         "Click off the popup to cancel.\n\n\n\n")
+        popup = CustomPopup("Are you sure you want to quit?", intro_message)
+        popup.open()
 
-        # Add close button
-        self.close_button = Button(
-            text="Close",
-            size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
-            background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
-            color=(1, 1, 1, 1)  # Set button text color to white
-        )
-        self.close_button.bind(on_press=self.dismiss)
+        # Bind a function to execute when the popup is dismissed
+        popup.bind(on_dismiss=self.check_quit)
 
-        # Layout setup
-        self.layout = BoxLayout(orientation='vertical', spacing=20, size_hint=(1, 1))
-        self.layout.add_widget(self.message_label)
-        self.layout.add_widget(scroll_view)
-        self.layout.add_widget(self.close_button)
+    def guide_message(self, instance):
+        # Create and display the custom popup
+        popup = CustomPopup("Guide:", "This application helps you analyze articles and scrape sublinks from websites.\n\n"
+                                       "To use the application:\n"
+                                       "- Enter the URL(s) of the news articles you want to analyze in the top section.\n"
+                                       "- Click on the 'Analyze' button to summarize the articles.\n"
+                                       "- Enter the URL to scrape sublinks from in the bottom section.\n"
+                                       "- Click on the 'Scrape Sublinks' button to extract sublinks from the provided URL.\n\n"
+                                       "Enjoy analyzing news with Deep Scrape!\n\n\n\n")
+        popup.open()
 
-        self.content = self.layout
+    def Features_Message(self, instance):
+        # Create and display another custom popup
+        popup = CustomPopup("Features available", "Various Functions:\n\n"
+                                                  "- Statistics: Perform statistical analysis of your created data, as well as visualization of availabe data. \n"
+                                                  "- Preview Data: Choose from the data files that you have created to see what you have available or veiw the \n   raw data in .csv, , .xml, .xlx format for furhter analysis \n"
+                                                  "- Find Sites To Scrape: Various common sites availbe for scraping.\n"
+                                                  "- Exit to quit.\n\n"
+                                                  "Enjoy analyzing news with Deep Scrape!\n\n\n\n")
+        popup.open()
+
+    def analyze_popup(self, instance):
+        # Create an instance of AnalyzePopup
+        analyze_popup = AnalyzePopup()
+
+        # Open the AnalyzePopup
+        analyze_popup.open()
+        analyze_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
+
+    def Find_Sites_to_Scrape(self, instance):
+        # Create an instance of Sites to Scrape
+        find_sites = Sites_to_Scrape()
+
+        # Open the AnalyzePopup
+        find_sites.open()
+    def check_quit(self, instance):
+        # Check if the user confirmed quitting
+        if instance.is_confirmed:
+            # Quit the app
+            App.get_running_app().stop()
+
+
+if __name__ == '__main__':
+    LeadGenerator().run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
