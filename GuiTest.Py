@@ -20,10 +20,11 @@ class LeadGenerator(App):
     def build(self):
 
         # Set window size to match screen dimensions
-        Window.fullscreen = 'auto'
+        #Window.fullscreen = 'auto'
         # Setting background color
         Window.clearcolor = (0.133, 0.133, 0.133, 1)
 
+        # Main layout
         root_layout = BoxLayout(orientation='vertical', size_hint=(1, 1), padding=20, spacing=10)
         root_layout.bind(minimum_height=root_layout.setter('height'))
 
