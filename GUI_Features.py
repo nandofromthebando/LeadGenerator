@@ -7,6 +7,9 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 
+#Popups from other project refer to documentation.
+
+
 class CustomPopup(Popup):
     def __init__(self, title, message, **kwargs):
         super().__init__(**kwargs)
