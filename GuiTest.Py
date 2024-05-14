@@ -15,8 +15,7 @@ from tkinter import messagebox
 from textblob import TextBlob
 from newspaper import Article
 import subprocess
-from GUI_Features import CustomPopup , AnalyzePopup , Sites_to_Scrape
-
+from GUI_Features import CustomPopup , SearchPopup 
 class LeadGenerator(App):
 
     def build(self):
@@ -52,12 +51,6 @@ class LeadGenerator(App):
         menu_preview_data_button.halign = 'center'
         menu_preview_data_button.valign = 'middle'
 
-        menu_find_sites_button = Button(text='Find Sites to Scrape', size_hint=(None, None), size=(400, 60))
-        menu_find_sites_button.bind(on_press=self.Find_Sites_to_Scrape)
-        menu_find_sites_button.text_size = menu_find_sites_button.size
-        menu_find_sites_button.halign = 'center'
-        menu_find_sites_button.valign = 'middle'
-
         menu_exit_button = Button(text='Exit', size_hint=(None, None), size=(100, 60), on_press=self.quit_app)
         menu_exit_button.text_size = menu_exit_button.size
         menu_exit_button.halign = 'center'
@@ -67,7 +60,6 @@ class LeadGenerator(App):
 
         menu_layout.add_widget(menu_statistics_button)
         menu_layout.add_widget(menu_preview_data_button)
-        menu_layout.add_widget(menu_find_sites_button)
         menu_layout.add_widget(menu_exit_button)
         menu_layout.add_widget(status_bar)
         root_layout.add_widget(menu_layout)
@@ -76,7 +68,7 @@ class LeadGenerator(App):
         root_layout.add_widget(Widget(size_hint_y=None, height=5))
 
         # Guide message
-        welcome_message = "Welcome to DeepScrape!"
+        welcome_message = "Welcome to Lead Generator!"
         welcome_label = Label(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
         root_layout.add_widget(welcome_label)
 
@@ -95,13 +87,13 @@ class LeadGenerator(App):
         root_layout.add_widget(Widget(size_hint_y=None, height=2))
 
         url_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
-        url_layout.add_widget(Label(text="Scrape Links:", font_size='24sp', bold=True, color=(1, 1, 1, 1)))
+        url_layout.add_widget(Label(text="Search For Leads:", font_size='24sp', bold=True, color=(1, 1, 1, 1)))
         self.url_text = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1))
         url_layout.add_widget(self.url_text)
         url_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
         url_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_url_text))
 
-        url_buttons_layout.add_widget(Button(text='Analyze', on_press=self.analyze_popup))
+        url_buttons_layout.add_widget(Button(text='Search', on_press=self.searchfunc_popup))
         url_layout.add_widget(url_buttons_layout)
         root_layout.add_widget(url_layout)
 
@@ -217,13 +209,13 @@ class LeadGenerator(App):
 
     def guide_message(self, instance):
         # Create and display the custom popup
-        popup = CustomPopup("Guide:", "This application helps you analyze articles and scrape sublinks from websites.\n\n"
+        popup = CustomPopup("Guide:", "This application helps you generate leads in your area\n\n"
                                        "To use the application:\n"
-                                       "- Enter the URL(s) of the news articles you want to analyze in the top section.\n"
-                                       "- Click on the 'Analyze' button to summarize the articles.\n"
-                                       "- Enter the URL to scrape sublinks from in the bottom section.\n"
-                                       "- Click on the 'Scrape Sublinks' button to extract sublinks from the provided URL.\n\n"
-                                       "Enjoy analyzing news with Deep Scrape!\n\n\n\n")
+                                       "- Enter the zip code of the of the area that you want to locate leads.\n"
+                                       "- Click on the 'Search' button to locate the leads in the area.\n"
+                                       "- It will ask if you want to save the data to a spreadsheet in XLS, CSV, or XML format\n"
+                                       "- The delete file option will allow you to delete older files that you have created in this folder.\n\n"
+                                       "Enjoy finding leads with Lead Generator!\n\n\n\n")
         popup.open()
 
     def Features_Message(self, instance):
@@ -231,18 +223,17 @@ class LeadGenerator(App):
         popup = CustomPopup("Features available", "Various Functions:\n\n"
                                                   "- Statistics: Perform statistical analysis of your created data, as well as visualization of availabe data. \n"
                                                   "- Preview Data: Choose from the data files that you have created to see what you have available or veiw the \n   raw data in .csv, , .xml, .xlx format for furhter analysis \n"
-                                                  "- Find Sites To Scrape: Various common sites availbe for scraping.\n"
                                                   "- Exit to quit.\n\n"
-                                                  "Enjoy analyzing news with Deep Scrape!\n\n\n\n")
+                                                   "Enjoy finding leads with Lead Generator!\n\n\n\n")
         popup.open()
 
-    def analyze_popup(self, instance):
+    def searchfunc_popup(self, instance):
         # Create an instance of AnalyzePopup
-        analyze_popup = AnalyzePopup()
+        search_popup = SearchPopup()
 
         # Open the AnalyzePopup
-        analyze_popup.open()
-        analyze_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
+        search_popup.open()
+        search_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
 
     def Find_Sites_to_Scrape(self, instance):
         # Create an instance of Sites to Scrape

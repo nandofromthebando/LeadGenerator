@@ -51,7 +51,7 @@ class CustomPopup(Popup):
 
 
 
-class AnalyzePopup(Popup):
+class SearchPopup(Popup):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -143,57 +143,6 @@ class AnalyzePopup(Popup):
             # Show an error message if either file type or filename is missing
             self.message_label.text = "Please select file type and enter filename"
 
-class Sites_to_Scrape(Popup):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-        # Set popup properties
-        self.title = "News Websites List"
-        self.size_hint = (None, None)
-        self.size = (800, 600)
-        self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
-        self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
-
-        # Create a grid layout for labels
-        grid_layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
-        grid_layout.bind(minimum_height=grid_layout.setter('height'))
-
-        # Add labels for each news website link
-        news_sites = [
-            "https://www.bbc.com/news",
-            "https://www.nytimes.com/",
-            "https://edition.cnn.com/",
-            "https://www.theguardian.com/international",
-            "https://www.foxnews.com/",
-            "https://www.nbcnews.com/",
-            "https://www.washingtonpost.com/",
-            "https://www.usatoday.com/",
-            "https://www.reuters.com/",
-            "https://www.bloomberg.com/",
-            "https://www.aljazeera.com/",
-            "https://www.huffpost.com/",
-            "https://www.buzzfeednews.com/",
-            "https://www.independent.co.uk/",
-            "https://www.euronews.com/",
-            "https://apnews.com/",
-            "https://www.rte.ie/news/",
-            "https://timesofindia.indiatimes.com/",
-            "https://www.hindustantimes.com/",
-            "https://www.dawn.com/",
-        ]
-        # Add message label
-        self.message_label = Label(
-            text="Here is a list of common websites:",
-            size_hint=(1, None),
-            height=150,
-            font_size='26sp',
-            color=(1, 1, 1, 1)  # Set text color to dark gray
-        )
-
-        # Create a grid layout for labels
-        grid_layout = GridLayout(cols=2, spacing=20, size_hint_y=None)
-        grid_layout.bind(minimum_height=grid_layout.setter('height'))
 
         
         for site in news_sites:
