@@ -11,5 +11,5 @@ driver.get("https://www.linkedin.com/search/results/people/?keywords=real%20esta
 
 soup = BeautifulSoup(driver.page_source, 'lxml')
 
-boxes = soup.find_all('li',class_ ='reusable-search__result-container')   #
+boxes = soup.find_all('li',class_ ='reusable-search__result-container')   # Boxes HTML variables, contain profiles
 print(len(boxes))
