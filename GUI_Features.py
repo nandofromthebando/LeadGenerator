@@ -9,45 +9,33 @@ from kivy.uix.gridlayout import GridLayout
 
 #Popups from other project refer to documentation.
 
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.boxlayout import BoxLayout
 
 class CustomPopup(Popup):
     def __init__(self, title, message, **kwargs):
         super().__init__(**kwargs)
-
-        # For info popups
         self.title = title
         self.size_hint = (None, None)
-        self.size = (800, 400)
-        self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
-        self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
+        self.size = (900, 700)
+        self.auto_dismiss = True
 
-        # Add message label
-        self.message_label = Label(
-            text=message,
-            size_hint=(1, None),
-            height=150,
-            font_size='16sp',
-            color=(1, 1, 1, 1)  # Set text color to dark gray
-        )
+        # Create a label for the message
+        self.message_label = Label(text=message, size_hint=(1, None), height=300, halign='center', valign='middle', text_size=(self.width - 40, None))
 
         # Add close button
-        self.close_button = Button(
-            text="Close",
-            size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
-            background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
-            color=(1, 1, 1, 1)  # Set button text color to white
-        )
+        self.close_button = Button(text="Close", size_hint=(None, None), size=(100, 50), background_color=(0.2, 0.6, 0.2, 1))
         self.close_button.bind(on_press=self.dismiss)
 
         # Layout setup
-        self.layout = BoxLayout(orientation='vertical', spacing=20, size_hint=(1, None))
+        self.layout = BoxLayout(orientation='vertical', spacing=10, padding=20)
         self.layout.add_widget(self.message_label)
         self.layout.add_widget(self.close_button)
 
         self.content = self.layout
+
 
 
 
@@ -58,9 +46,8 @@ class SearchPopup(Popup):
         # Set popup properties
         self.title = "Please Name and Specify File Type"
         self.size_hint = (None, None)
-        self.size = (800, 400)
+        self.size = (900, 700)
         self.background_color = (0.8, 0.8, 0.8, 1)  # Set background color to light gray
-        self.separator_color = (1, 1, 1, 1)  # Set separator color to dark gray
         self.auto_dismiss = True  # Prevent dismissing when clicking outside the popup
 
         # Initialize variables to store user input
@@ -69,10 +56,10 @@ class SearchPopup(Popup):
 
         # Add message label
         self.message_label = Label(
-            text="Input Name and File Type:",
+            text="Input Name and File Type:\n\n\n\n",
             size_hint=(1, None),
             height=150,
-            font_size='16sp',
+            font_size='12sp',
             color=(1, 1, 1, 1)  # Set text color to dark gray
         )
 
@@ -84,7 +71,7 @@ class SearchPopup(Popup):
             btn.bind(on_release=lambda btn: self.select_file_type(btn.text))
             self.file_type_dropdown.add_widget(btn)
 
-        self.file_type_button = Button(text='Select File Type', size_hint=(None, None), size=(150, 50))
+        self.file_type_button = Button(text='Select File Type', size_hint=(None, None), size=(300, 50))
         self.file_type_button.bind(on_release=self.file_type_dropdown.open)
         self.file_type_dropdown.bind(on_select=self.update_file_type)
 
@@ -92,8 +79,8 @@ class SearchPopup(Popup):
         self.save_button = Button(
             text="Save",
             size_hint=(None, None),
-            size=(100, 50),
-            font_size='16sp',
+            size=(300, 50),
+            font_size='12sp',
             background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
             color=(1, 1, 1, 1),  # Set button text color to white
             on_press=self.save_and_dismiss
@@ -104,14 +91,14 @@ class SearchPopup(Popup):
             text="Cancel",
             size_hint=(None, None),
             size=(100, 50),
-            font_size='16sp',
+            font_size='12sp',
             background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
             color=(1, 1, 1, 1),  # Set button text color to white
             on_press=self.dismiss
         )
 
         # User input the file name
-        self.analyze_file_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), size_hint_y=None, height=40)
+        self.analyze_file_entry = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1), size_hint_y=None, height=40)
         self.analyze_file_entry.bind(text=self.update_filename)
 
         # Layout setup
@@ -158,7 +145,7 @@ class SearchPopup(Popup):
             text="Close",
             size_hint=(None, None),
             size=(100, 50),
-            font_size='16sp',
+            font_size='12sp',
             background_color=(0.2, 0.6, 0.2, 1),  # Set button color to green
             color=(1, 1, 1, 1)  # Set button text color to white
         )
