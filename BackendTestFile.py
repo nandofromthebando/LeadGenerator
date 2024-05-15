@@ -4,16 +4,17 @@ import pandas as pd
 import time
 
 options = webdriver.ChromeOptions()
-options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(options=options)
+options.add_experimental_option("detach", True)  # Is this able to work with live chrome session?
+driver = webdriver.Chrome("options=options")
 
-driver.get("https://www.linkedin.com/search/results/people/?keywords=real%20estate%20agents&origin=SWITCH_SEARCH_VERTICAL&searchId=eb6c74ed-da5a-4aec-b51e-aa4ab7f5459e&sid=9cj")
+driver.get("https://www.linkedin.com")
 
 soup = BeautifulSoup(driver.page_source, 'lxml')
 
 # How to bypass logging in, enter credentials
 
-# Enter crendtials func
+# Enter crendtials func or open broswer session?
+
 # Note will have to add to ui place to input crednetials (add fucn to GuiFeatures)
 user = input('Username:')   
 pw = input('Pawssword:')   
