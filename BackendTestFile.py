@@ -11,5 +11,17 @@ driver.get("https://www.linkedin.com/search/results/people/?keywords=real%20esta
 
 soup = BeautifulSoup(driver.page_source, 'lxml')
 
+# How to bypass logging in, enter credentials
+
+# Enter crendtials func
+# Note will have to add to ui place to input crednetials (add fucn to GuiFeatures)
+user = input('Username:')   
+pw = input('Pawssword:')   
+def enter_creds(user, pw):
+    # Create a way to log in  with user input ofc
+    pass
+
+
 boxes = soup.find_all('li',class_ ='reusable-search__result-container')   # Boxes HTML variables, contain profiles
+
 print(len(boxes))
