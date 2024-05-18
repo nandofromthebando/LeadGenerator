@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+import pandas as pd
 
 def custom_google_search(query, language="en", region="US"):
     # Configure Chrome options to deny geolocation permissions
@@ -23,14 +24,22 @@ def custom_google_search(query, language="en", region="US"):
 
     # Get the page source after some time for dynamic content to load
     driver.implicitly_wait(10)  # Wait for up to 10 seconds for elements to load
+    df = pd.DataFrame({'Link':[''], 'Name':[''], 'Job Title':[''], 'Location':['']})  # Create a df to store all the information
+
     # Parse the page source with BeautifulSoup
     soup = BeautifulSoup(driver.page_source, 'lxml')
 
     # Find all elements with the specified class
-    boxes = soup.find_all('li', class_='hfpxzc')  # Boxes HTML variables, contain profiles of businesses
+    boxes = soup.find_all('a', class_='hfpxzc')  # Boxes HTML variables, contain profiles
+    # Extract information from each box (example)
+    for i in boxes:
+        business_name = # Find HTML components for these ..
+        location = 
+        link = 
+
 
     # Test if they are there
-    print(len(boxes))
+    # print(df)
 
 '''    while(True):
         pass'''
