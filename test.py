@@ -27,15 +27,15 @@ def custom_google_search(query, language="en", region="US"):
     print(page_source)
     # Parse the HTML source using Beautiful Soup
     soup = BeautifulSoup(page_source, "html.parser")
-
+    print("passed")
     # Find all the search result titles using the appropriate CSS selector
-    search_results = soup.select("a.hfpxzc aria-label")
-
+    search_results = soup.select("a.hfpxzc")
+    print("passed")
     # Print the titles of the search results
     for result in search_results:
         print(result.get_text())
-    while(True):
-        pass
+'''    while(True):
+        pass'''
 # Example usage
 query = "medical salons near 02301"
 custom_google_search(query)
