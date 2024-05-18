@@ -172,10 +172,10 @@ class BackgroundLabel(Label):
         self.rect.pos = self.pos
         self.rect.size = self.size
 
-class DataFramePopup(Popup):
+class PreviewData(Popup):
+    # For the Preveiw Data button
     def __init__(self, df, **kwargs):
-        super(DataFramePopup, self).__init__(**kwargs)
-        
+        super(PreviewData, self).__init__(**kwargs)
         self.title = "Preveiw of Last Scrape"
         self.size_hint = (0.8, 0.8)
         

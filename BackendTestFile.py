@@ -54,11 +54,11 @@ while running:
             # Extract information from each box (example)
             for i in boxes:
                 try:
-                    link = i.find('a').get('href')
-                    # Assuming there's a name field in the HTML structure
+                    link = i.find('a').get('href') # Href holds links in html
                     name = i.find('span', {'dir','ltr'}).find('span',{'app-aware-link':'true'})  
                     title = i.find('div',class_ = 'entity-result__primary-subtitle t-14 t-black t-normal').text
                     location = i.find('div',class_ = 'entity-result__secondary-subtitle t-14 t-normal').text
+                    # Adds name, title, location and link to the dataframe
                     df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}))
                 except:
                     pass
