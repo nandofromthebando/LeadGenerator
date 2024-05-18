@@ -121,60 +121,6 @@ class LeadGenerator(App):
 
         return root_layout
 
-    def summarize(self, instance):
-            filename = self.analyze_file_entry.text
-            selected_format = self.selected_format.get()
-
-            # Grabs URLs from user and analyzes them
-            urls = self.filename_entry.text.strip().split('\n')
-
-            def save_data(file_format, filename):
-                for url in urls:
-                    if url.strip():
-                        try:
-                            article = Article(url)
-                            article.download()
-                            article.parse()
-                            article.nlp()
-
-                            # Extracting data from the article
-                            article_title = article.title
-                            article_authors = ', '.join(article.authors)
-                            article_publish_date = str(article.publish_date)
-                            article_summary = article.summary
-                            article_text = article.text
-                            analysis = TextBlob(article_text)
-                            article_sentiment = str(analysis.polarity)
-
-                            # Save data to the selected file format with the provided filename
-                            if file_format == 'CSV':
-                                save_titles_to_csv([url], [article_title], [article_authors], [article_publish_date],
-                                                [article_summary], [article_sentiment], f"{filename}.csv")
-                            elif file_format == 'XLS':
-                                save_titles_to_xls([url], [article_title], [article_authors], [article_publish_date],
-                                                [article_summary], [article_sentiment], f"{filename}.xls")
-                            elif file_format == 'XML':
-                                save_titles_to_xml([url], [article_title], [article_authors], [article_publish_date],
-                                                [article_summary], [article_sentiment], f"{filename}.xml")
-
-                        except Exception as e:
-                            print(f"Error processing URL: {url}. Error: {e}")
-                            continue
-
-                    file_path = f"{filename}.csv" if file_format == 'CSV' else (
-                        f"{filename}.xls" if file_format == 'XLS' else f"{filename}.xml")
-                    subprocess.Popen(["open", file_path])  # Opens the saved file
-
-            # Call the save_data function with selected_format and filename
-            save_data(selected_format, filename)
-
-    def scrape_and_display(self):
-        url = self.sublink_url.text
-        sublinks = scrape_the_goods(url)
-        if sublinks:
-            self.url_text.text = '\n'.join(sublinks)
-        else:
-            self.url_text.text = "No sublinks found."
 
     def clear_url_text(self, instance):
         self.url_text.text = ''
