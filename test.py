@@ -33,9 +33,7 @@ def custom_google_search(query, language="en", region="US"):
     boxes = soup.find_all('a', class_='hfpxzc')  # Boxes HTML variables, contain profiles
     # Extract information from each box (example)
     for i in boxes:
-        business_name = # Find HTML components for these ..
-        location = 
-        link = 
+        link = i.get('href') # Links to all the businesses
 
 
     # Test if they are there
