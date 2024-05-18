@@ -20,6 +20,7 @@ chrome_options = webdriver.ChromeOptions()
 # Pass Chrome service and options to Chrome WebDriver
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
+time.sleep(10) 
 # Maximize browser window
 driver.maximize_window()
 
@@ -37,42 +38,36 @@ while running:
     user_input = input("Press 's' to stop the loop: ")
     if user_input.lower() == 's':
         running = False
-# Navigate to LinkedIn login page
-driver.get(url)
 
-# Parse the page source with BeautifulSoup
-soup = BeautifulSoup(driver.page_source, 'lxml')
+    else:
+        time.sleep(5)
+        # Navigate to LinkedIn login page
+        driver.get(url)
+        time.sleep(3)
+        df = pd.DataFrame({'Link':[''], 'Name':[''], 'Job Title':[''], 'Location':['']})  # Create a df to store all the information
 
-# Find all elements with the specified class
-boxes = soup.find_all('li', class_='reusable-search__result-container')  # Boxes HTML variables, contain profiles
+        while True:
+            # Parse the page source with BeautifulSoup
+            soup = BeautifulSoup(driver.page_source, 'lxml')
 
-# Print the number of elements found
-print(len(boxes))
+            # Find all elements with the specified class
+            boxes = soup.find_all('li', class_='reusable-search__result-container')  # Boxes HTML variables, contain profiles
+            # Extract information from each box (example)
+            for i in boxes:
+                try:
+                    link = i.find('a').get('href')
+                    # Assuming there's a name field in the HTML structure
+                    name = i.find('span', {'dir','ltr'}).find('span',{'app-aware-link':'true'})  
+                    title = i.find('div',class_ = 'entity-result__primary-subtitle t-14 t-black t-normal').text
+                    location = i.find('div',class_ = 'entity-result__secondary-subtitle t-14 t-normal').text
+                    df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}))
+                except:
+                    pass
+            # For scrolling to the bottom of the page
+            driver.execute_script('window.scrollTo(0,document.body.scroll Hieght)')
+            time.sleep(1)
 
-df = pd.DataFrame({'Link':[''], 'Name':[''], 'Job Title':[''], 'Location':['']})  # Create a df to store all the information
-
-while True:
-    # Parse the page source with BeautifulSoup
-    soup = BeautifulSoup(driver.page_source, 'lxml')
-
-    # Find all elements with the specified class
-    boxes = soup.find_all('li', class_='reusable-search__result-container')  # Boxes HTML variables, contain profiles
-    # Extract information from each box (example)
-    for i in boxes:
-        try:
-            link = i.find('a').get('href')
-            # Assuming there's a name field in the HTML structure
-            name = i.find('span', {'dir','ltr'}).find('span',{'app-aware-link':'true'})  
-            title = i.find('div',class_ = 'entity-result__primary-subtitle t-14 t-black t-normal').text
-            location = i.find('div',class_ = 'entity-result__secondary-subtitle t-14 t-normal').text
-            df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}))
-        except:
-            pass
-    # For scrolling to the bottom of the page
-    driver.execute_script('window.scrollTo(0,document.body.scroll Hieght)')
-    time.sleep(1)
-
-    # For clicking through the pages pg 2 and so on (skip page 1 different html)
-    driver.find_elemnt_by_xpath('/html/body/div[5]/div[3]/div[2]/div/div[1]/main/div/div/div[4]/div/div/button[2]').click()
-    time.sleep(3)
+            # For clicking through the pages pg 2 and so on (skip page 1 different html)
+            driver.find_elemnt_by_xpath('/html/body/div[5]/div[3]/div[2]/div/div[1]/main/div/div/div[4]/div/div/button[2]').click()
+            time.sleep(3)
 
