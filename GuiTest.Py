@@ -40,17 +40,17 @@ class LeadGenerator(App):
         menu_layout = BoxLayout(size_hint=(1, None), padding=10, spacing=10)
 
         # Menu buttons
-        menu_statistics_button = Button(text='Statistics', size_hint=(None, None), size=(250, 60))
+        menu_statistics_button = Button(text='Statistics', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
         menu_statistics_button.text_size = menu_statistics_button.size
         menu_statistics_button.halign = 'center'
         menu_statistics_button.valign = 'middle'
 
-        menu_preview_data_button = Button(text='Preview Data', size_hint=(None, None), size=(250, 60))
+        menu_preview_data_button = Button(text='Preview Data', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
         menu_preview_data_button.text_size = menu_preview_data_button.size
         menu_preview_data_button.halign = 'center'
         menu_preview_data_button.valign = 'middle'
 
-        menu_exit_button = Button(text='Exit', size_hint=(None, None), size=(100, 60), on_press=self.quit_app)
+        menu_exit_button = Button(text='Exit', size_hint=(None, None), size=(100, 60), on_press=self.quit_app, background_color =(0.2, 0.6, 0.8, 1))
         menu_exit_button.text_size = menu_exit_button.size
         menu_exit_button.halign = 'center'
         menu_exit_button.valign = 'middle'
@@ -72,9 +72,9 @@ class LeadGenerator(App):
         root_layout.add_widget(welcome_label)
 
         # Add buttons to create custom popups
-        button1 = Button(text='Start Here', size_hint=(None, None), size=(150, 60))
+        button1 = Button(text='Start Here', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
         button1.bind(on_press=self.guide_message)
-        button2 = Button(text='Features', size_hint=(None, None), size=(150, 60))
+        button2 = Button(text='Features', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
         button2.bind(on_press=self.Features_Message)
 
         buttons_layout = BoxLayout(size_hint=(None, None), size=(300, 120), spacing=10)
@@ -90,9 +90,9 @@ class LeadGenerator(App):
         self.url_text = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1))
         url_layout.add_widget(self.url_text)
         url_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
-        url_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_url_text))
+        url_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_url_text, background_color =(0.2, 0.6, 0.8, 1)))
 
-        url_buttons_layout.add_widget(Button(text='Search', on_press=self.searchfunc_popup))
+        url_buttons_layout.add_widget(Button(text='Search', on_press=self.searchfunc_popup, background_color =(0.2, 0.6, 0.8, 1)))
         url_layout.add_widget(url_buttons_layout)
         root_layout.add_widget(url_layout)
 
@@ -102,8 +102,8 @@ class LeadGenerator(App):
         sublink_layout.add_widget(self.sublink_url)
 
         sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        sublink_buttons_layout.add_widget(Button(text='Scrape Sublinks', size_hint_y=1, height=60))
-        sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60))
+        sublink_buttons_layout.add_widget(Button(text='Scrape Sublinks', size_hint_y=1, height=60, background_color =(0.2, 0.6, 0.8, 1)))
+        sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         sublink_layout.add_widget(sublink_buttons_layout)
 
         filename_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
@@ -112,8 +112,8 @@ class LeadGenerator(App):
         filename_layout.add_widget(self.csv_filename_entry)
 
         filename_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        filename_buttons_layout.add_widget(Button(text='Delete File', on_press=self.delete_file, size_hint_y=None, height=60))
-        filename_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_csv_input, size_hint_y=None, height=60))
+        filename_buttons_layout.add_widget(Button(text='Delete File', on_press=self.delete_file, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
+        filename_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_csv_input, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         filename_layout.add_widget(filename_buttons_layout)
 
         root_layout.add_widget(sublink_layout)

@@ -171,3 +171,32 @@ class BackgroundLabel(Label):
     def _update_rect(self, instance, value):
         self.rect.pos = self.pos
         self.rect.size = self.size
+
+class DataFramePopup(Popup):
+    def __init__(self, df, **kwargs):
+        super(DataFramePopup, self).__init__(**kwargs)
+        
+        self.title = "Preveiw of Last Scrape"
+        self.size_hint = (0.8, 0.8)
+        
+        # Create a layout for the content of the popup
+        content_layout = BoxLayout(orientation='vertical', padding=10, spacing=10)
+        
+        # Convert DataFrame to string and create a Label
+        df_string = df.to_string()
+        df_label = Label(text=df_string, size_hint_y=None)
+        df_label.bind(texture_size=df_label.setter('size'))
+        
+        # Create a ScrollView to hold the Label
+        scroll_view = ScrollView(size_hint=(1, 1))
+        scroll_view.add_widget(df_label)
+        
+        content_layout.add_widget(scroll_view)
+        
+        # Add a close button
+        close_button = Button(text="Close", size_hint=(1, None), height=50)
+        close_button.bind(on_press=self.dismiss)
+        
+        content_layout.add_widget(close_button)
+        
+        self.add_widget(content_layout)
