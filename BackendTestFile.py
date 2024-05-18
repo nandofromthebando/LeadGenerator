@@ -7,20 +7,39 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-# Set Chrome options
-chrome_options = Options()
 
-# Pass Chrome options to Chrome WebDriver
-driver = webdriver.Chrome(options=chrome_options)
+# Path to Chrome binary
+chrome_binary = '/Users/underwater56/Downloads/chromedriver-mac-arm64/chromedriver'
+
+# Set Chrome service
+chrome_service = ChromeService(chrome_binary)
+
+# Set Chrome options
+chrome_options = webdriver.ChromeOptions()
+
+# Pass Chrome service and options to Chrome WebDriver
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 # Maximize browser window
 driver.maximize_window()
 
 # LinkedIn login URL
 url = "https://www.linkedin.com/login"
+# Flag variable to control the loop
+running = True
 
+# Loop until user stops it
+while running:
+    # Add a delay to keep the browser window open for inspection
+    time.sleep(10)  # Adjust the delay as needed (in seconds)
+
+    # Check if the user wants to stop the loop
+    user_input = input("Press 's' to stop the loop: ")
+    if user_input.lower() == 's':
+        running = False
 # Navigate to LinkedIn login page
 driver.get(url)
+
 # Parse the page source with BeautifulSoup
 soup = BeautifulSoup(driver.page_source, 'lxml')
 
