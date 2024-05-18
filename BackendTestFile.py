@@ -3,16 +3,20 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-'''# Initialize WebDriver with specified options and chromedriver path
-driver = webdriver.Chrome('/opt/homebrew/Caskroom/chromedriver/125.0.6422.60/chromedriver-mac-arm64/chromedriver')
+# Set up Chrome options
+options = Options()
+options.add_argument("--start-maximized")  # Start with the browser maximized
 
-# Open the target URL
-driver.get('www.linkedin.com')  # Replace with the actual URL
-'''
+# Create a new instance of the Chrome driver
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+
+# LinkedIn login URL
+url = "https://www.linkedin.com"
 
 # Parse the page source with BeautifulSoup
 soup = BeautifulSoup(driver.page_source, 'lxml')
@@ -23,11 +27,13 @@ boxes = soup.find_all('li', class_='reusable-search__result-container')  # Boxes
 # Print the number of elements found
 print(len(boxes))
 
+df = pd.DataFrame({'Link':[''], 'Name':[''], 'Job Title':[''], 'Location':['']})  # Create a df to store all the information
+
 # Extract information from each box (example)
 for i in boxes:
     link = i.find('a').get('href')
     # Assuming there's a name field in the HTML structure
     name = i.find('span', {'dir','ltr'}).find('span',{'app-aware-link':'true'})  
-    
-    print(f'Name: {name.text if name else "N/A"}, Link: {link}')
-    break  # Remove this break if you want to process all boxes
+    title = i.find('div',class_ = 'entity-result__primary-subtitle t-14 t-black t-normal').text
+    location = i.find('div',class_ = 'entity-result__secondary-subtitle t-14 t-normal').text
+    df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}))
