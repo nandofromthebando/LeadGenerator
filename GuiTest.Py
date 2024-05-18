@@ -12,9 +12,8 @@ from kivy.core.window import Window
 from kivy.uix.popup import Popup
 import tkinter as tk
 from tkinter import messagebox
-
 import subprocess
-from GUI_Features import CustomPopup , SearchPopup 
+from GUI_Features import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel
 class LeadGenerator(App):
 
     def build(self):
@@ -69,7 +68,7 @@ class LeadGenerator(App):
 
         # Guide message
         welcome_message = "Welcome to Lead Generator!"
-        welcome_label = Label(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
+        welcome_label = BackgroundLabel(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
         root_layout.add_widget(welcome_label)
 
         # Add buttons to create custom popups
@@ -87,7 +86,7 @@ class LeadGenerator(App):
         root_layout.add_widget(Widget(size_hint_y=None, height=2))
 
         url_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
-        url_layout.add_widget(Label(text="Search For Leads:", font_size='24sp', bold=True, color=(1, 1, 1, 1)))
+        url_layout.add_widget(BackgroundLabel(text='Scrape for Leads:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
         self.url_text = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1))
         url_layout.add_widget(self.url_text)
         url_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)

@@ -6,6 +6,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
+from kivy.graphics import Color, Rectangle
 
 #Popups from other project refer to documentation.
 
@@ -159,3 +160,14 @@ class SearchPopup(Popup):
 
         self.content = self.layout
 
+class BackgroundLabel(Label):
+    def __init__(self, **kwargs):
+        super(BackgroundLabel, self).__init__(**kwargs)
+        with self.canvas.before:
+            Color(0.2, 0.6, 0.8, 1)  # Set the background color (R, G, B, A)
+            self.rect = Rectangle(size=self.size, pos=self.pos)
+        self.bind(size=self._update_rect, pos=self._update_rect)
+
+    def _update_rect(self, instance, value):
+        self.rect.pos = self.pos
+        self.rect.size = self.size

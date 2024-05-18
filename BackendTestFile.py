@@ -19,7 +19,6 @@ chrome_options = webdriver.ChromeOptions()
 
 # Pass Chrome service and options to Chrome WebDriver
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-
 time.sleep(10) 
 # Maximize browser window
 driver.maximize_window()
