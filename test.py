@@ -24,8 +24,7 @@ def custom_google_search(query, language="en", region="US"):
     # Get the page source after some time for dynamic content to load
     driver.implicitly_wait(10)  # Wait for up to 10 seconds for elements to load
     page_source = driver.page_source
-    driver.implicitly_wait(10)
-    driver.implicitly_wait(10)
+    print(page_source)
     # Parse the HTML source using Beautiful Soup
     soup = BeautifulSoup(page_source, "html.parser")
 
