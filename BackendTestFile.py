@@ -1,23 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-# Set up Chrome options
-options = Options()
-options.add_argument("--start-maximized")  # Start with the browser maximized
+# Set Chrome options
+chrome_options = Options()
 
-# Create a new instance of the Chrome driver
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+# Pass Chrome options to Chrome WebDriver
+driver = webdriver.Chrome(options=chrome_options)
+
+# Maximize browser window
+driver.maximize_window()
 
 # LinkedIn login URL
-url = "https://www.linkedin.com"
+url = "https://www.linkedin.com/login"
 
+# Navigate to LinkedIn login page
+driver.get(url)
 # Parse the page source with BeautifulSoup
 soup = BeautifulSoup(driver.page_source, 'lxml')
 
