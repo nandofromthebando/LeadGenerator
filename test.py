@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import pandas as pd
+import time
 
 def custom_google_search(query, language="en", region="US"):
     # Configure Chrome options to deny geolocation permissions
@@ -21,7 +22,7 @@ def custom_google_search(query, language="en", region="US"):
 
     # Open the Google search page
     driver.get(url)
-
+    time.sleep(3)
     # Get the page source after some time for dynamic content to load
     driver.implicitly_wait(10)  # Wait for up to 10 seconds for elements to load
     df = pd.DataFrame({'Link':[''], 'Name':[''], 'Job Title':[''], 'Location':['']})  # Create a df to store all the information
@@ -29,13 +30,16 @@ def custom_google_search(query, language="en", region="US"):
     # Parse the page source with BeautifulSoup
     soup = BeautifulSoup(driver.page_source, 'lxml')
 
-    # Find all elements with the specified class
-    boxes = soup.find_all('a', class_='hfpxzc')  # Boxes HTML variables, contain profiles
+    # Find all sub elements
+    boxes= soup.find_all('div', class_ = 'Z8fK3b')
     # Extract information from each box (example)
     for i in boxes:
-        link = i.get('href') # Links to all the businesses
-
-
+        biz_name = i.find('div',class_ = 'NrDZNb').text
+        num_reviews = i.find('span',class_ = 'UY7F9', attrs={'aria-hidden': 'true'}).text
+        rating = i.find('span', attrs={'aria-hidden': 'true'}).text
+        print(biz_name)
+        print(f'Reviews: {num_reviews}')
+        print(f'Rating: {rating}')
     # Test if they are there
     # print(df)
 
