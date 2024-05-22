@@ -24,11 +24,20 @@ def custom_google_search(query, language="en", region="US"):
     driver.get(url)
     time.sleep(3)  # Allow some time for the page to load
 
-    # Get the page source after some time for dynamic content to load
-    driver.implicitly_wait(10)  # Wait for up to 10 seconds for elements to load
-    df = pd.DataFrame(columns=['Business name', 'Link to book', 'Number of reviews', 'Rating'])  # Create a df to store all the information
+    # Scroll down incrementally to load dynamic content
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
+        # Scroll down by 1000 pixels
+        driver.execute_script("window.scrollBy(0, 1000);")
+        time.sleep(2)  # Wait for content to load
 
-    # Parse the page source with BeautifulSoup
+        # Calculate new scroll height and compare with last scroll height
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break  # If the height hasn't changed, break the loop
+        last_height = new_height
+
+    # Get the page source after scrolling
     soup = BeautifulSoup(driver.page_source, 'lxml')
 
     # Find all sub elements
@@ -45,17 +54,22 @@ def custom_google_search(query, language="en", region="US"):
     # Ensure the number of boxes and links are the same
     min_length = min(len(boxes), len(links))
 
-    # Extract information from each box and append to the DataFrame
+    # Collect rows in a list of dictionaries
+    rows = []
     for x in range(min_length):
         biz_name = boxes[x].find('div', class_='NrDZNb').text
         num_reviews = boxes[x].find('span', class_='UY7F9', attrs={'aria-hidden': 'true'}).text
         rating = boxes[x].find('span', attrs={'aria-hidden': 'true'}).text
-        df = df._append({
+        rows.append({
             'Business name': biz_name,
             'Link to book': links[x],
             'Number of reviews': num_reviews,
             'Rating': rating
-        }, ignore_index =True)
+        })
+
+    # Convert the list of dictionaries to a DataFrame and concatenate
+    new_df = pd.DataFrame(rows)
+    df = pd.concat([new_df], ignore_index=True)
 
     driver.quit()  # Close the browser
 
