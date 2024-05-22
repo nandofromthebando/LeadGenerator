@@ -59,7 +59,7 @@ while running:
                     title = i.find('div',class_ = 'entity-result__primary-subtitle t-14 t-black t-normal').text
                     location = i.find('div',class_ = 'entity-result__secondary-subtitle t-14 t-normal').text
                     # Adds name, title, location and link to the dataframe
-                    df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}))
+                    df.append(({'Link':link, 'Name':name, 'Job Title':title, 'Location':location}),ignore_index =True)
                 except:
                     pass
             # For scrolling to the bottom of the page
