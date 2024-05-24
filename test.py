@@ -34,14 +34,28 @@ def custom_google_search(query, language="en", region="US"):
     rows = []
     scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[jsaction="focus:scrollable.focus; blur:scrollable.blur"]' )
     driver.execute("""
-        var scrollablediv = arguments[];
-        function scrollWithinElement(scrollablediv){
+        var scrollableDiv = arguments[];
+        function scrollWithinElement(scrollableDiv){
             return Promise((resolve, reject)  => {
                 var totalHeight = 0;
                 var distance = 1000;
                 var scrollDelay = 3000;
                    
-                   var timer = setInterval
+                var timer = setInterval(() => {
+                   var scrollHeightBefore = scrollableDiv.scrollHeight;
+                   scroallableDiv.scrollBy(0, distance);
+                   totalHeight += distance;
+
+                   if (totalHeight >= scrollHeightBefore) { 
+                    totalHeight = 0;
+                    setTimeout((){
+                        var scrollHeightAfter = scrollableDiv.scrollHeight;
+                        if 
+                    }, scrollDelay)
+                   
+                   }
+                } , 200)
+                   
               })   
         }
         return scrollWithinElement
