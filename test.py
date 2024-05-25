@@ -30,7 +30,7 @@ def custom_google_search(query, language="en", region="US"):
 
         # Open the Google search page
         driver.get(url)
-        time.sleep(3)  # Allow some time for the page to load
+        time.sleep(5)  # Allow some time for the page to load
 
         rows = []
 
@@ -62,7 +62,7 @@ def custom_google_search(query, language="en", region="US"):
                                 }
                             }, scrollDelay);
                         }
-                    }, 500);
+                    }, 1000);
                 });
             }
             return scrollWithinElement(scrollableDiv);
@@ -78,7 +78,7 @@ def custom_google_search(query, language="en", region="US"):
             data = {}
 
             try:
-                data['title'] = item.find_element(By.CSS_SELECTOR, ".fontHeadlineSmall").text
+                data['Company Name'] = item.find_element(By.CSS_SELECTOR, ".fontHeadlineSmall").text
             except Exception:
                 pass
             
@@ -92,6 +92,15 @@ def custom_google_search(query, language="en", region="US"):
             except Exception:
                 pass
 
+            try:
+                rating_text = item.find_element(By.CSS_SELECTOR, '.fontBodyMedium > span[role = "img"]').get_attribute('aria-label')
+                rating_nums = [float(piece.replace(",", ".")) for piece in rating_text.split(" ") if piece.replace(",", ".").replace(".", "", 1).isdigit()]
+
+                if rating_nums:
+                    data['stars'] = rating_nums[0]
+                    data['reviews'] = int(rating_nums[1]) if len(rating_nums) > 1 else 0
+            except Exception:
+                pass
 
             if (data.get('title')):
                 results.append(data)
