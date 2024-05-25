@@ -43,7 +43,7 @@ def custom_google_search(query, language="en", region="US"):
                 return new Promise((resolve, reject)  => {
                     var totalHeight = 0;
                     var distance = 1000;
-                    var scrollDelay = 3000;
+                    var scrollDelay = 1000;
                     
                     var timer = setInterval(() => {
                         var scrollHeightBefore = scrollableDiv.scrollHeight;
@@ -62,7 +62,7 @@ def custom_google_search(query, language="en", region="US"):
                                 }
                             }, scrollDelay);
                         }
-                    }, 200);
+                    }, 500);
                 });
             }
             return scrollWithinElement(scrollableDiv);
@@ -81,11 +81,22 @@ def custom_google_search(query, language="en", region="US"):
                 data['title'] = item.find_element(By.CSS_SELECTOR, ".fontHeadlineSmall").text
             except Exception:
                 pass
+            
+            try:
+                data['link'] = item.find_element(By.CSS_SELECTOR, "a").get_attribute('href')
+            except Exception:
+                pass
+
+            try:
+                data['website'] = item.find_element(By.CSS_SELECTOR, "div a").get_attribute('href')
+            except Exception:
+                pass
+
 
             if (data.get('title')):
                 results.append(data)
             
-            with open('results.json', '') as f:
+            with open('results.json', 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2)
     finally:
         time.sleep(60)
