@@ -10,10 +10,10 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget  # Import Widget for separators
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
-import tkinter as tk
-from tkinter import messagebox
-import subprocess
 from GUI_Features import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel
+from threading import Thread
+from test import custom_google_search
+
 class LeadGenerator(App):
 
     def build(self):
@@ -107,7 +107,9 @@ class LeadGenerator(App):
         sublink_layout.add_widget(self.sublink_url)
 
         sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        sublink_buttons_layout.add_widget(Button(text='Deploy Bot', size_hint_y=1, height=60, background_color =(0.2, 0.6, 0.8, 1)))
+        deploy_bot_button = Button(text='Deploy Bot', size_hint_y=1, height=60, background_color =(0.2, 0.6, 0.8, 1))
+        deploy_bot_button.bind(on_press=self.deploy_bot)
+        sublink_buttons_layout.add_widget(deploy_bot_button)
         sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         sublink_layout.add_widget(sublink_buttons_layout)
 
@@ -135,6 +137,19 @@ class LeadGenerator(App):
 
     def clear_csv_input(self, instance):
         self.csv_filename_entry.text = ''
+
+    def deploy_bot(self, instance):
+        query = self.sublink_url.text.strip()
+        if query:
+            # Run the custom_google_search function in a separate thread to avoid blocking the UI
+            Thread(target=self.run_custom_google_search, args=(query,)).start()
+        else:
+            popup = CustomPopup("Error", "Please enter a search query.")
+            popup.open()
+
+    def run_custom_google_search(self, query):
+        custom_google_search(query)
+
 
     def delete_file(self, instance):
 

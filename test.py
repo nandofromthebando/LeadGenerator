@@ -6,10 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import json
-from bs4 import BeautifulSoup
-import pandas as pd
 import time
-import re
 
 def custom_google_search(query, language="en", region="US"):
     try:
@@ -110,6 +107,4 @@ def custom_google_search(query, language="en", region="US"):
     finally:
         time.sleep(60)
         driver.quit()
-# Test usage before adding it to the main
-query = "medical salons near ma"
-custom_google_search(query)
+
