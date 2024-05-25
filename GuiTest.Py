@@ -72,37 +72,42 @@ class LeadGenerator(App):
         root_layout.add_widget(welcome_label)
 
         # Add buttons to create custom popups
-        button1 = Button(text='Start Here', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
-        button1.bind(on_press=self.guide_message)
-        button2 = Button(text='Features', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
-        button2.bind(on_press=self.Features_Message)
+        start_here_button = Button(text='Start Here', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
+        start_here_button.bind(on_press=self.guide_message)
+        features_button = Button(text='Features', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
+        features_button.bind(on_press=self.Features_Message)
 
         buttons_layout = BoxLayout(size_hint=(None, None), size=(300, 120), spacing=10)
-        buttons_layout.add_widget(button1)
-        buttons_layout.add_widget(button2)
+        buttons_layout.add_widget(start_here_button)
+        buttons_layout.add_widget(features_button)
         root_layout.add_widget(buttons_layout)
 
         # Horizontal separator
         root_layout.add_widget(Widget(size_hint_y=None, height=2))
 
-        url_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
-        url_layout.add_widget(BackgroundLabel(text='Scrape for Leads:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.url_text = TextInput(text='', font_size='12sp', background_color=(0.3, 0.3, 0.3, 1))
-        url_layout.add_widget(self.url_text)
-        url_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
-        url_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_url_text, background_color =(0.2, 0.6, 0.8, 1)))
+        personal_scrape_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
+        personal_scrape_layout.add_widget(BackgroundLabel(text='Get Personal Contact Info:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
+        self.personal_info_message = Label(text="Get personal information on the latest scrape.\n\nIf you haven't already please make an initial search (specify location)", 
+                                    font_size='16sp', 
+                                    color=(1, 1, 1, 1), 
+                                    halign='center',
+                                    size_hint=(1, None), 
+                                    height=60)
+        personal_scrape_layout.add_widget(self.personal_info_message)
+        personal_scrape_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
+        personal_scrape_buttons_layout.add_widget(Button(text='Start New', on_press=self.clear_prog, background_color =(0.2, 0.6, 0.8, 1)))
 
-        url_buttons_layout.add_widget(Button(text='Search', on_press=self.searchfunc_popup, background_color =(0.2, 0.6, 0.8, 1)))
-        url_layout.add_widget(url_buttons_layout)
-        root_layout.add_widget(url_layout)
+        personal_scrape_buttons_layout.add_widget(Button(text='Get Data', on_press=self.searchfunc_popup, background_color =(0.2, 0.6, 0.8, 1)))
+        personal_scrape_layout.add_widget(personal_scrape_buttons_layout)
+        root_layout.add_widget(personal_scrape_layout)
 
         sublink_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
-        sublink_layout.add_widget(BackgroundLabel(text='Scrape for Sublinks:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
+        sublink_layout.add_widget(BackgroundLabel(text='Google Map Search:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
         self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
         sublink_layout.add_widget(self.sublink_url)
 
         sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        sublink_buttons_layout.add_widget(Button(text='Scrape Sublinks', size_hint_y=1, height=60, background_color =(0.2, 0.6, 0.8, 1)))
+        sublink_buttons_layout.add_widget(Button(text='Deploy Bot', size_hint_y=1, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         sublink_layout.add_widget(sublink_buttons_layout)
 
@@ -122,8 +127,8 @@ class LeadGenerator(App):
         return root_layout
 
 
-    def clear_url_text(self, instance):
-        self.url_text.text = ''
+    def clear_prog(self, instance):
+        pass
 
     def clear_linkscraper(self, instance):
         self.sublink_url.text = ''
