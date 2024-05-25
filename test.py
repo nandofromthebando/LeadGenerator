@@ -105,19 +105,6 @@ def custom_google_search(query, language="en", region="US"):
 
                 except Exception as e:
                     print(f"Error processing box {x}: {e}")
-
-            # Scroll to the bottom of the page
-            driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
-            time.sleep(2)  # Allow time for new content to load
-
-            new_height = driver.execute_script("return document.body.scrollHeight")
-            if new_height == prev_height:  # Check if we have reached the bottom
-                break
-            prev_height = new_height
-
-            if len(rows) >= 50:  # Stop after collecting data for 50 businesses
-                break
-
     except Exception as e:
         print(f"Error during search: {e}")
     finally:
