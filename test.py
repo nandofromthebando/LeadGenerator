@@ -32,7 +32,9 @@ def custom_google_search(query, language="en", region="US"):
     time.sleep(3)  # Allow some time for the page to load
 
     rows = []
-    scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[jsaction="focus:scrollable.focus; blur:scrollable.blur"]' )
+
+    # This is what scrolls through the pages
+    scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[role="feed"]' )
     # JavaScript code to be executed
     scroll_script = """
         var scrollableDiv = arguments[0];
