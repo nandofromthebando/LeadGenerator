@@ -88,7 +88,7 @@ def custom_google_search(query, language="en", region="US"):
                 pass
 
             try:
-                data['website'] = item.find_element(By.CSS_SELECTOR, "div a").get_attribute('href')
+                data['website'] = item.find_element(By.CSS_SELECTOR, "a.A1zNzb").get_attribute('href')
             except Exception:
                 pass
 
