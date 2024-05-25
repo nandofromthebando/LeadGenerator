@@ -33,33 +33,40 @@ def custom_google_search(query, language="en", region="US"):
 
     rows = []
     scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[jsaction="focus:scrollable.focus; blur:scrollable.blur"]' )
-    driver.execute("""
-        var scrollableDiv = arguments[];
+    # JavaScript code to be executed
+    scroll_script = """
+        var scrollableDiv = arguments[0];
         function scrollWithinElement(scrollableDiv){
-            return Promise((resolve, reject)  => {
+            return new Promise((resolve, reject)  => {
                 var totalHeight = 0;
                 var distance = 1000;
                 var scrollDelay = 3000;
-                   
+                
                 var timer = setInterval(() => {
-                   var scrollHeightBefore = scrollableDiv.scrollHeight;
-                   scroallableDiv.scrollBy(0, distance);
-                   totalHeight += distance;
+                    var scrollHeightBefore = scrollableDiv.scrollHeight;
+                    scrollableDiv.scrollBy(0, distance);
+                    totalHeight += distance;
 
-                   if (totalHeight >= scrollHeightBefore) { 
-                    totalHeight = 0;
-                    setTimeout((){
-                        var scrollHeightAfter = scrollableDiv.scrollHeight;
-                        if 
-                    }, scrollDelay)
-                   
-                   }
-                } , 200)
-                   
-              })   
+                    if (totalHeight >= scrollHeightBefore) { 
+                        totalHeight = 0;
+                        setTimeout(() => {
+                            var scrollHeightAfter = scrollableDiv.scrollHeight;
+                            if (scrollHeightAfter > scrollHeightBefore){
+                                return;
+                            } else {
+                                clearInterval(timer);
+                                resolve();
+                            }
+                        }, scrollDelay);
+                    }
+                }, 200);
+            });
         }
-        return scrollWithinElement
-                   """)
+        return scrollWithinElement(scrollableDiv);
+    """
+
+    # Execute the JavaScript in the context of the scrollable div
+    driver.execute_script(scroll_script, scrollable_div)
     try:
         while True:
             # Get the page source after scrolling
