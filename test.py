@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+import re
 import json
 import time
 
@@ -35,36 +36,34 @@ def custom_google_search(query, language="en", region="US"):
         scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[role="feed"]' )
         # JavaScript code to be executed
         scroll_script = """
-            var scrollableDiv = arguments[0];
+          var scrollableDiv = arguments[0];
+          function scrollWithinElement(scrollableDiv) {
+              return new Promise((resolve, reject) => {
+                  var totalHeight = 0;
+                  var distance = 1000;
+                  var scrollDelay = 3000;
+                  
+                  var timer = setInterval(() => {
+                      var scrollHeightBefore = scrollableDiv.scrollHeight;
+                      scrollableDiv.scrollBy(0, distance);
+                      totalHeight += distance;
 
-            function scrollWithinElement(scrollableDiv) {
-                return new Promise((resolve, reject) => {
-                    var totalHeight = 0;
-                    var distance = 1000;
-                    var scrollDelay = 1000;
-                    
-                    var timer = setInterval(() => {
-                        var scrollHeightBefore = scrollableDiv.scrollHeight;
-                        var scrollTopBefore = scrollableDiv.scrollTop;
-                        scrollableDiv.scrollBy(0, distance);
-                        totalHeight += distance;
-
-                        setTimeout(() => {
-                            var scrollHeightAfter = scrollableDiv.scrollHeight;
-                            var scrollTopAfter = scrollableDiv.scrollTop;
-
-                            // Check if the scroll height or scroll top has not increased
-                            if (scrollTopAfter >= scrollHeightAfter - scrollableDiv.clientHeight || scrollTopAfter === scrollTopBefore) {
-                                clearInterval(timer);
-                                resolve();
-                            }
-                        }, scrollDelay);
-                    }, scrollDelay);
-                });
-            }
-
-            return scrollWithinElement(scrollableDiv);
-
+                      if (totalHeight >= scrollHeightBefore) {
+                          totalHeight = 0;
+                          setTimeout(() => {
+                              var scrollHeightAfter = scrollableDiv.scrollHeight;
+                              if (scrollHeightAfter > scrollHeightBefore) {
+                                  return;
+                              } else {
+                                  clearInterval(timer);
+                                  resolve();
+                              }
+                          }, scrollDelay);
+                      }
+                  }, 200);
+              });
+          }
+          return scrollWithinElement(scrollableDiv);
         """
 
         # Execute the JavaScript in the context of the scrollable div
@@ -103,13 +102,16 @@ def custom_google_search(query, language="en", region="US"):
 
             try:
                 text_content = item.text
-                phone_pattern = r'((//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[3]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[2]/span[2]))'
-                matches = re.findall(phone_pattern, text_content)
+                # Regular expression to match addresses within <span> tags
+                address_pattern = r'/html/body/div[2]/div[3]/div[8]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[7]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[2]/span[2]'
+                matches = re.findall(address_pattern, text_content)
 
-                phone_numbers = [match[0] for match in matches]
-                unique_phone_numbers = list(set(phone_numbers))
+                # Extract matched addresses
+                addresses = [match for match in matches]
+                unique_addresses = list(set(addresses))
 
-                data['address'] = unique_phone_numbers[0] if unique_phone_numbers else None   
+                # Store the first unique address found in the data dictionary
+                data['address'] = unique_addresses[0] if unique_addresses else None
             except Exception:
                 pass
 

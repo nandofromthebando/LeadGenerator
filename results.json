@@ -1,0 +1,886 @@
+[
+  {
+    "Company Name": "Best You MedSpa",
+    "link": "https://www.google.com/maps/place/Best+You+MedSpa/data=!4m7!3m6!1s0x89e45b69986af8db:0xe7b40b7a9a256c59!8m2!3d42.0412712!4d-71.3057098!16s%2Fg%2F11h8cgs_jg!19sChIJ2_hqmGlb5IkRWWwlmnoLtOc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 1,
+    "address": null
+  },
+  {
+    "Company Name": "Flawless Medspa",
+    "link": "https://www.google.com/maps/place/Flawless+Medspa/data=!4m7!3m6!1s0x89e361607a835d07:0xc7903cab60164822!8m2!3d42.1721487!4d-70.8776304!16s%2Fg%2F11vyym9_jk!19sChIJB12DemBh44kRIkgWYKs8kMc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 5,
+    "address": null
+  },
+  {
+    "Company Name": "Mac Med Spa",
+    "link": "https://www.google.com/maps/place/Mac+Med+Spa/data=!4m7!3m6!1s0x89e472442c07921f:0x9a59366bc8ee75bb!8m2!3d42.1489427!4d-71.5071311!16s%2Fg%2F1tf5fs96!19sChIJH5IHLERy5IkRu3XuyGs2WZo?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 137,
+    "address": null
+  },
+  {
+    "Company Name": "Bellisimo Med Spa and Laser Center",
+    "link": "https://www.google.com/maps/place/Bellisimo+Med+Spa+and+Laser+Center/data=!4m7!3m6!1s0x89e4069771b54da7:0xb0f112e6a4f1b1a4!8m2!3d42.2625843!4d-71.830011!16s%2Fg%2F1td5s8wg!19sChIJp021cZcG5IkRpLHxpOYS8bA?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 72,
+    "address": null
+  },
+  {
+    "Company Name": "Dream Spa Medical",
+    "link": "https://www.google.com/maps/place/Dream+Spa+Medical/data=!4m7!3m6!1s0x89e481ead996a425:0x459a82e8c9f6c477!8m2!3d42.1919345!4d-71.118241!16s%2Fg%2F12lkgw3s6!19sChIJJaSW2eqB5IkRd8T2yeiCmkU?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 120,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e37d4743cba335:0x66c602f1dc1d8e14!8m2!3d42.2111035!4d-71.0192977!16s%2Fg%2F12hl13dtp!19sChIJNaPLQ0d944kRFI4d3PECxmY?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/42e03ae5-c95f-4756-9a8c-21fc747628dd?booking_source=booknow&booking_medium=google&hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9U47EWQaMOqTQzgcaCy22SOOrwuK58wLsyWzwWkc8o9HD_xPOXYStTakY8fkqNYe8RFVt7p1F2w9ad0OhVN1GorjB0xWQ%3D%3D",
+    "stars": 4.3,
+    "reviews": 278,
+    "address": null
+  },
+  {
+    "Company Name": "Gentle Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Gentle+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e362cafd50976d:0x5c230f834cf013f4!8m2!3d42.2115035!4d-70.9999588!16s%2Fg%2F11btx53f26!19sChIJbZdQ_cpi44kR9BPwTIMPI1w?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 66,
+    "address": null
+  },
+  {
+    "Company Name": "Kirby's Aesthetic Bar LLC",
+    "link": "https://www.google.com/maps/place/Kirby%27s+Aesthetic+Bar+LLC/data=!4m7!3m6!1s0x89e49dd11b714021:0x887d1c610aa3cf21!8m2!3d42.1625827!4d-70.9557609!16s%2Fg%2F11fkdrv6_p!19sChIJIUBxG9Gd5IkRIc-jCmEcfYg?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 5,
+    "address": null
+  },
+  {
+    "Company Name": "Renew Skin Med Spa",
+    "link": "https://www.google.com/maps/place/Renew+Skin+Med+Spa/data=!4m7!3m6!1s0x89e38117d484a06b:0xab6199333d6904aa!8m2!3d42.310303!4d-71.2762209!16s%2Fg%2F11gsjd8j40!19sChIJa6CE1BeB44kRqgRpPTOZYas?authuser=0&hl=en&rclk=1",
+    "website": "https://aspiremedspa.zenoti.com/webstoreNew/services/fa541101-56c1-40cd-b3c1-142fe0b43a83?booking_source=booknow&booking_medium=google&hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9WhjUAzNhtz1KKXlKbuORcvrS7oIae5SGcF3PWMgPrrih8lVeF41Qa_zo97gVE_s93Nu4yHl73UoiprmZCAjuRzTLoIOQ%3D%3D",
+    "stars": 4.9,
+    "reviews": 328,
+    "address": null
+  },
+  {
+    "Company Name": "South Shore Aesthetics & Wellness",
+    "link": "https://www.google.com/maps/place/South+Shore+Aesthetics+%26+Wellness/data=!4m7!3m6!1s0x89e4854bb8ffce13:0x6f437efc7cf2b5a3!8m2!3d42.0781787!4d-71.0335577!16s%2Fg%2F11f7jgy_dq!19sChIJE87_uEuF5IkRo7XyfPx-Q28?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 2,
+    "address": null
+  },
+  {
+    "Company Name": "Forever Slender MedSpa",
+    "link": "https://www.google.com/maps/place/Forever+Slender+MedSpa/data=!4m7!3m6!1s0x89e48a132c62e525:0x4b29c79f8e4cf7ad!8m2!3d41.9717772!4d-71.1768834!16s%2Fg%2F11f121t47l!19sChIJJeViLBOK5IkRrfdMjp_HKUs?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 42,
+    "address": null
+  },
+  {
+    "Company Name": "Bello Corpo Med Spa",
+    "link": "https://www.google.com/maps/place/Bello+Corpo+Med+Spa/data=!4m7!3m6!1s0x89e37516788321bf:0x2989e033149ce755!8m2!3d42.5010491!4d-71.1626712!16s%2Fg%2F11b7cv214m!19sChIJvyGDeBZ144kRVeecFDPgiSk?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 82,
+    "address": null
+  },
+  {
+    "Company Name": "Skin Beaute Med Spa Randolph",
+    "link": "https://www.google.com/maps/place/Skin+Beaute+Med+Spa+Randolph/data=!4m7!3m6!1s0x89e482fa3b5af7ab:0x9eb27761c82b6538!8m2!3d42.1670994!4d-71.0432641!16s%2Fg%2F11hcz19_fy!19sChIJq_daO_qC5IkROGUryGF3sp4?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX1~I~p1r06gQ1UifZ3dUvwTncwF3BjDnhNo=/services?hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9VP1nrBxBiI2XnP_3eBW-PpGgSOA5d7roiEN_0oJh-EgV-j-kGRaRSrPlvzEww51au17fz6Nnt9-CNB31MKEDB5IJaLSg%3D%3D",
+    "stars": 4.6,
+    "reviews": 85,
+    "address": null
+  },
+  {
+    "Company Name": "Peak Image Med Spa",
+    "link": "https://www.google.com/maps/place/Peak+Image+Med+Spa/data=!4m7!3m6!1s0x89e37d7c0d1db40b:0x912a23952f08c40e!8m2!3d42.2699636!4d-71.0344152!16s%2Fg%2F11fnxvrc2r!19sChIJC7QdDXx944kRDsQIL5UjKpE?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 121,
+    "address": null
+  },
+  {
+    "Company Name": "Allure Med Spa and Salon",
+    "link": "https://www.google.com/maps/place/Allure+Med+Spa+and+Salon/data=!4m7!3m6!1s0x89e3633503e0c5cd:0x3a16d2e0da334486!8m2!3d42.244846!4d-70.9997168!16s%2Fg%2F1vgw9mwp!19sChIJzcXgAzVj44kRhkQz2uDSFjo?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 53,
+    "address": null
+  },
+  {
+    "Company Name": "KN MedSpa",
+    "link": "https://www.google.com/maps/place/KN+MedSpa/data=!4m7!3m6!1s0x89e38719dfffde55:0x215c4ef41be56c9d!8m2!3d42.2724699!4d-71.3155936!16s%2Fg%2F11g_v662j!19sChIJVd7_3xmH44kRnWzlG_ROXCE?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX18If1--pB6MCyDYLvvCUakRpMcH-EevhnI=/services?hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9XLEQT3uRbTW1KbJHDc-yPBZZIRjW07LNBH7lik2Qm5IN3mGF1pYXiNiS_0Xo4nifJR8O1BhHhLz4HCvA1AMKYL58_ieg%3D%3D",
+    "stars": 4.8,
+    "reviews": 23,
+    "address": null
+  },
+  {
+    "Company Name": "Flawless MedSpa",
+    "link": "https://www.google.com/maps/place/Flawless+MedSpa/data=!4m7!3m6!1s0x89e3749cd7f7bc79:0xdca6d82eab6e19be!8m2!3d42.4812422!4d-71.1870432!16s%2Fg%2F1tfpw8lb!19sChIJebz315x044kRvhluqy7Yptw?authuser=0&hl=en&rclk=1",
+    "stars": 4.6,
+    "reviews": 118,
+    "address": null
+  },
+  {
+    "Company Name": "Vanity Beauty Bar",
+    "link": "https://www.google.com/maps/place/Vanity+Beauty+Bar/data=!4m7!3m6!1s0x89e37b5099b9ae4b:0x12824757c5dcbb07!8m2!3d42.0707377!4d-71.0852003!16s%2Fg%2F11sfxjhfsj!19sChIJS665mVB744kRB7vcxVdHghI?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 20,
+    "address": null
+  },
+  {
+    "Company Name": "VIO Med Spa",
+    "link": "https://www.google.com/maps/place/VIO+Med+Spa/data=!4m7!3m6!1s0x89e383555a36023f:0xd3959d1f1dbb305e!8m2!3d42.3077228!4d-71.2144721!16s%2Fg%2F11kjzsj8j_!19sChIJPwI2WlWD44kRXjC7HR-dldM?authuser=0&hl=en&rclk=1",
+    "website": "https://viomedspa.zenoti.com/webstoreNew/services/bdfa421c-10bd-47a5-9ead-436b27ceaae7?booking_source=booknow&booking_medium=google&hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9X6CKSpcaMaOTnrbhdC4aqtjpjApHKrmzEb7J_2KPJWSM0NxhcVJhHaiW6XgcMpNICF-7DzhUB8fo9CNn2dyhyPFun96Q%3D%3D",
+    "stars": 4.9,
+    "reviews": 85,
+    "address": null
+  },
+  {
+    "Company Name": "Art of Aesthetics Medical Spa",
+    "link": "https://www.google.com/maps/place/Art+of+Aesthetics+Medical+Spa/data=!4m7!3m6!1s0x89e48f4000633a9d:0x9f6f48f391b480e6!8m2!3d42.0166795!4d-71.0287105!16s%2Fg%2F11vprzpm8n!19sChIJnTpjAECP5IkR5oC0kfNIb58?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19wwfgAlbvtdjTqh2vPI48sF~jVnyXpDB0=/services?hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9VGMP4NUWJA1jVWiw3-KQUUHUy4Sc-qI0AAzZkK26Pv0a4iscxYX8_0B7rJRiqEfG5roBgjSN1P7AjfW7RjNuAupMemfw%3D%3D",
+    "stars": 5.0,
+    "reviews": 31,
+    "address": null
+  },
+  {
+    "Company Name": "Level Up Med Spa",
+    "link": "https://www.google.com/maps/place/Level+Up+Med+Spa/data=!4m7!3m6!1s0x89e309ce3982bb05:0x2700b53b58e4ea78!8m2!3d42.655709!4d-71.1403491!16s%2Fg%2F11fmxprwg7!19sChIJBbuCOc4J44kReOrkWDu1ACc?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX1-lR38t9Tzo87MRq63yGnAxold5RYeblMg=/services?hl=en-US&gei=8YRSZur6A4arwbkPnLaK8AM&rwg_token=AJKvS9VXV-dH-fjrrHCWpCNr60tjbBrYa17oUZoc5M4iiQQUhC_Vzz9Tl6WJe8qy7aJP2U7XYRaFd3KsCw3qx_QnItGJ3RhGkQ%3D%3D",
+    "stars": 4.9,
+    "reviews": 158,
+    "address": null
+  },
+  {
+    "Company Name": "Self Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Self+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e46f926660d599:0xdc699fbe91640ce8!8m2!3d42.0871899!4d-71.4104937!16s%2Fg%2F1tgdv4lg!19sChIJmdVgZpJv5IkR6Axkkb6fadw?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 64,
+    "address": null
+  },
+  {
+    "Company Name": "Mac Med Spa",
+    "link": "https://www.google.com/maps/place/Mac+Med+Spa/data=!4m7!3m6!1s0x89e472442c07921f:0x9a59366bc8ee75bb!8m2!3d42.1489427!4d-71.5071311!16s%2Fg%2F1tf5fs96!19sChIJH5IHLERy5IkRu3XuyGs2WZo?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 137,
+    "address": null
+  },
+  {
+    "Company Name": "Josy Esthetics",
+    "link": "https://www.google.com/maps/place/Josy+Esthetics/data=!4m7!3m6!1s0x89e485127e923677:0x71b0e36a74441c44!8m2!3d42.0924912!4d-71.0945526!16s%2Fg%2F11ty146v2y!19sChIJdzaSfhKF5IkRRBxEdGrjsHE?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 7,
+    "address": null
+  },
+  {
+    "Company Name": "Laser Cosmetic Center",
+    "link": "https://www.google.com/maps/place/Laser+Cosmetic+Center/data=!4m7!3m6!1s0x89e4632670ef28f7:0x9a3ad3d2784202e5!8m2!3d42.0776146!4d-71.0887724!16s%2Fg%2F1tdy5h1v!19sChIJ9yjvcCZj5IkR5QJCeNLTOpo?authuser=0&hl=en&rclk=1",
+    "stars": 4.4,
+    "reviews": 11,
+    "address": null
+  },
+  {
+    "Company Name": "Skinplicity Medical Spa",
+    "link": "https://www.google.com/maps/place/Skinplicity+Medical+Spa/data=!4m7!3m6!1s0x89e491fb4c46cb6f:0x3c15f4a49d0a6940!8m2!3d41.981032!4d-70.9763979!16s%2Fg%2F11rmqcdk24!19sChIJb8tGTPuR5IkRQGkKnaT0FTw?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 59,
+    "address": null
+  },
+  {
+    "Company Name": "VIO Med Spa",
+    "link": "https://www.google.com/maps/place/VIO+Med+Spa/data=!4m7!3m6!1s0x89e481fb5ff17fcb:0xcc2e498674a63fd2!8m2!3d42.2047626!4d-71.1535084!16s%2Fg%2F11vxh9s7wn!19sChIJy3_xX_uB5IkR0j-mdIZJLsw?authuser=0&hl=en&rclk=1",
+    "website": "https://viomedspa.zenoti.com/webstoreNew/services/ec83a141-ec67-4c79-9499-35edb65794fe?booking_source=booknow&booking_medium=google&hl=en-US&gei=94RSZsbfHr6IwbkPkee16AM&rwg_token=AJKvS9V-1Whs2xjuTFBXS8qDbHZPyXP6ShWLWg3VrraQ8YlGMVQ5yDQL-WWYZxjGjkMewDUux3-DLOBuFpgVqgi_IOgRfwUqgw%3D%3D",
+    "address": null
+  },
+  {
+    "Company Name": "Allure Med Spa and Salon",
+    "link": "https://www.google.com/maps/place/Allure+Med+Spa+and+Salon/data=!4m7!3m6!1s0x89e3633503e0c5cd:0x3a16d2e0da334486!8m2!3d42.244846!4d-70.9997168!16s%2Fg%2F1vgw9mwp!19sChIJzcXgAzVj44kRhkQz2uDSFjo?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 53,
+    "address": null
+  },
+  {
+    "Company Name": "UniQ Laser Center",
+    "link": "https://www.google.com/maps/place/UniQ+Laser+Center/data=!4m7!3m6!1s0x89e4815bd17e6cfb:0x7a2d040ed46b6220!8m2!3d42.1384774!4d-71.1460146!16s%2Fg%2F11bt_hw21n!19sChIJ-2x-0VuB5IkRIGJr1A4ELXo?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 434,
+    "address": null
+  },
+  {
+    "Company Name": "Glamour Body Sculpting & SPA",
+    "link": "https://www.google.com/maps/place/Glamour+Body+Sculpting+%26+SPA/data=!4m7!3m6!1s0x89e485d394828a21:0xc5764f02b6c578d3!8m2!3d42.0547243!4d-71.0605713!16s%2Fg%2F11s7k5kq6d!19sChIJIYqClNOF5IkR03jFtgJPdsU?authuser=0&hl=en&rclk=1",
+    "website": "https://booksy.com/en-us/717162_glamour-body-sculpting-spa_health-fitness_22367_brockton?hl=en-US&gei=94RSZsbfHr6IwbkPkee16AM&rwg_token=AJKvS9XuaId2IQUzoph_3CX0TKPsRd5rwXwCgFOdqnJVriKWeavZY4k-cqxGS2_g8nJLZ_8XIba75UH4aNsLrPmAoTRUkCJhMg%3D%3D",
+    "stars": 5.0,
+    "reviews": 13,
+    "address": null
+  },
+  {
+    "Company Name": "Peak Image Med Spa",
+    "link": "https://www.google.com/maps/place/Peak+Image+Med+Spa/data=!4m7!3m6!1s0x89e37d7c0d1db40b:0x912a23952f08c40e!8m2!3d42.2699636!4d-71.0344152!16s%2Fg%2F11fnxvrc2r!19sChIJC7QdDXx944kRDsQIL5UjKpE?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 121,
+    "address": null
+  },
+  {
+    "Company Name": "Beauty Haus Studios",
+    "link": "https://www.google.com/maps/place/Beauty+Haus+Studios/data=!4m7!3m6!1s0x89e485079ee62f53:0xe1d0296f7ca43bc6!8m2!3d42.070663!4d-71.0871464!16s%2Fg%2F11y1vrsz5h!19sChIJUy_mngeF5IkRxjukfG8p0OE?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 2,
+    "address": null
+  },
+  {
+    "Company Name": "Andi's Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Andi%27s+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e4f3e51f81f6cb:0x8bc48d600a7bd18c!8m2!3d41.9075295!4d-71.0501482!16s%2Fg%2F11mwrybdnz!19sChIJy_aBH-Xz5IkRjNF7CmCNxIs?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX1~tZURb7vr6UKq7NuzNFuqplV8GM~TZqaw=/services?hl=en-US&gei=94RSZsbfHr6IwbkPkee16AM&rwg_token=AJKvS9X7wr9IBa-36708uJN5IlwoKLR7vSZ-U-kbh_Cecqdeeb5q-XWYfiqBZTkujKcEgf5eVtePfV9wbWSBdNR2BF5xu89zvA%3D%3D",
+    "stars": 5.0,
+    "reviews": 226,
+    "address": null
+  },
+  {
+    "Company Name": "Bohemia Aesthetics Medical Spa",
+    "link": "https://www.google.com/maps/place/Bohemia+Aesthetics+Medical+Spa/data=!4m7!3m6!1s0x89e4939f75b3e3d7:0x974502e6a29da4ae!8m2!3d41.8962823!4d-70.9464434!16s%2Fg%2F11jzb1fpyb!19sChIJ1-OzdZ-T5IkRrqSdouYCRZc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 10,
+    "address": null
+  },
+  {
+    "Company Name": "Best You MedSpa",
+    "link": "https://www.google.com/maps/place/Best+You+MedSpa/data=!4m7!3m6!1s0x89e45b69986af8db:0xe7b40b7a9a256c59!8m2!3d42.0412712!4d-71.3057098!16s%2Fg%2F11h8cgs_jg!19sChIJ2_hqmGlb5IkRWWwlmnoLtOc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 1,
+    "address": null
+  },
+  {
+    "Company Name": "Flawless Medspa",
+    "link": "https://www.google.com/maps/place/Flawless+Medspa/data=!4m7!3m6!1s0x89e361607a835d07:0xc7903cab60164822!8m2!3d42.1721487!4d-70.8776304!16s%2Fg%2F11vyym9_jk!19sChIJB12DemBh44kRIkgWYKs8kMc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 5,
+    "address": null
+  },
+  {
+    "Company Name": "Solea Ageless Beauty",
+    "link": "https://www.google.com/maps/place/Solea+Ageless+Beauty/data=!4m7!3m6!1s0x89e363b0fe49f8bd:0xfed799e084bcd5f!8m2!3d42.1552391!4d-71.0101538!16s%2Fg%2F11rk8glmzx!19sChIJvfhJ_rBj44kRX81LCJ557Q8?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 74,
+    "address": null
+  },
+  {
+    "Company Name": "Essentials Laser & Med Spa",
+    "link": "https://www.google.com/maps/place/Essentials+Laser+%26+Med+Spa/data=!4m7!3m6!1s0x89e48d27103813a3:0x693d7078ea2d2f13!8m2!3d41.904859!4d-71.047331!16s%2Fg%2F11cmr5qq8j!19sChIJoxM4ECeN5IkREy8t6nhwPWk?authuser=0&hl=en&rclk=1",
+    "stars": 4.4,
+    "reviews": 21,
+    "address": null
+  },
+  {
+    "Company Name": "Lumi Aesthetics",
+    "link": "https://www.google.com/maps/place/Lumi+Aesthetics/data=!4m7!3m6!1s0x89e37cb49d361ddb:0x6ef6d2063b262dd7!8m2!3d42.2527332!4d-71.003994!16s%2Fg%2F11b5plyk15!19sChIJ2x02nbR844kR1y0mOwbS9m4?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 50,
+    "address": null
+  },
+  {
+    "Company Name": "Island Breeze Rejuvenation | Boston's Botox -Dermal Filler-IV Hydration | Mobile/Concierge",
+    "link": "https://www.google.com/maps/place/Island+Breeze+Rejuvenation+%7C+Boston%27s+Botox+-Dermal+Filler-IV+Hydration+%7C+Mobile%2FConcierge/data=!4m7!3m6!1s0x45bb907b9001b0e1:0xd40a492459ea2685!8m2!3d42.37992!4d-71.6835355!16s%2Fg%2F11l682vns7!19sChIJ4bABkHuQu0URhSbqWSRJCtQ?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 5,
+    "address": null
+  },
+  {
+    "Company Name": "Metamorphosis Skin Spa",
+    "link": "https://www.google.com/maps/place/Metamorphosis+Skin+Spa/data=!4m7!3m6!1s0x89e37f7919067d19:0xcd485316c6722048!8m2!3d42.1878655!4d-71.2032069!16s%2Fg%2F11pcwrgfpf!19sChIJGX0GGXl_44kRSCByxhZTSM0?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 3,
+    "address": null
+  },
+  {
+    "Company Name": "Dream Spa Medical",
+    "link": "https://www.google.com/maps/place/Dream+Spa+Medical/data=!4m7!3m6!1s0x89e47d6e9cef0b77:0x7de32534f4cd97b4!8m2!3d42.0919317!4d-71.2676734!16s%2Fg%2F11kryh2jfp!19sChIJdwvvnG595IkRtJfN9DQl430?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 53,
+    "address": null
+  },
+  {
+    "Company Name": "Dedham Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Dedham+Medical+Aesthetics/data=!4m7!3m6!1s0x89e480df34c2dc0d:0xaccec0f580c8a3b2!8m2!3d42.2467705!4d-71.1739081!16s%2Fg%2F11dym6_kp6!19sChIJDdzCNN-A5IkRsqPIgPXAzqw?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 117,
+    "address": null
+  },
+  {
+    "Company Name": "Renew Skin Med Spa",
+    "link": "https://www.google.com/maps/place/Renew+Skin+Med+Spa/data=!4m7!3m6!1s0x89e38117d484a06b:0xab6199333d6904aa!8m2!3d42.310303!4d-71.2762209!16s%2Fg%2F11gsjd8j40!19sChIJa6CE1BeB44kRqgRpPTOZYas?authuser=0&hl=en&rclk=1",
+    "website": "https://aspiremedspa.zenoti.com/webstoreNew/services/fa541101-56c1-40cd-b3c1-142fe0b43a83?booking_source=booknow&booking_medium=google&hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9W1RGJb172W4zgEAF91VfoSPoy8B8REsHFO5IHOVnzwoxU7d28iawdf_K6__2sYbsP0KQIf8i7Bh9AzKLvYafnzSCx_qQ%3D%3D",
+    "stars": 4.9,
+    "reviews": 328,
+    "address": null
+  },
+  {
+    "Company Name": "VIO Med Spa",
+    "link": "https://www.google.com/maps/place/VIO+Med+Spa/data=!4m7!3m6!1s0x89e383555a36023f:0xd3959d1f1dbb305e!8m2!3d42.3077228!4d-71.2144721!16s%2Fg%2F11kjzsj8j_!19sChIJPwI2WlWD44kRXjC7HR-dldM?authuser=0&hl=en&rclk=1",
+    "website": "https://viomedspa.zenoti.com/webstoreNew/services/bdfa421c-10bd-47a5-9ead-436b27ceaae7?booking_source=booknow&booking_medium=google&hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9VI0LzPuzemKNHDkE8I2g21YjLBu-tFhydrdkNeo_TUUDNUr3vNS3zHCNluxO3WSc4-LsOdgSSYb6JmtTome7rUJRjYNw%3D%3D",
+    "stars": 4.9,
+    "reviews": 85,
+    "address": null
+  },
+  {
+    "Company Name": "FAB Face And Body",
+    "link": "https://www.google.com/maps/place/FAB+Face+And+Body/data=!4m7!3m6!1s0x89e37d32d9701871:0x992bee095a3eeefe!8m2!3d42.2171862!4d-71.0029143!16s%2Fg%2F11h09v72n!19sChIJcRhw2TJ944kR_u4-WgnuK5k?authuser=0&hl=en&rclk=1",
+    "stars": 2.0,
+    "reviews": 4,
+    "address": null
+  },
+  {
+    "Company Name": "Rejuvenation Skin and Laser Center",
+    "link": "https://www.google.com/maps/place/Rejuvenation+Skin+and+Laser+Center/data=!4m7!3m6!1s0x89e480df42e07cad:0x778c91bdfb476e2a!8m2!3d42.1592018!4d-71.1451511!16s%2Fg%2F1tdfd39l!19sChIJrXzgQt-A5IkRKm5H-72RjHc?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 2,
+    "address": null
+  },
+  {
+    "Company Name": "KN MedSpa",
+    "link": "https://www.google.com/maps/place/KN+MedSpa/data=!4m7!3m6!1s0x89e38719dfffde55:0x215c4ef41be56c9d!8m2!3d42.2724699!4d-71.3155936!16s%2Fg%2F11g_v662j!19sChIJVd7_3xmH44kRnWzlG_ROXCE?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX18If1--pB6MCyDYLvvCUakRpMcH-EevhnI=/services?hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9W4t4_429LMprcpjeqSZie4jtcV6ZIHNjU0Gqx4xqKpjeRL3AKWiQZmwEG7i_fX0YWxM3HdGGrfmLom6RoyqZmD6Ugp_A%3D%3D",
+    "stars": 4.8,
+    "reviews": 23,
+    "address": null
+  },
+  {
+    "Company Name": "Ideal Image Braintree",
+    "link": "https://www.google.com/maps/place/Ideal+Image+Braintree/data=!4m7!3m6!1s0x89e37d16c0eb0c1b:0xcd86bebc77162d41!8m2!3d42.2203428!4d-71.030507!16s%2Fg%2F11b6jbwj1d!19sChIJGwzrwBZ944kRQS0Wd7y-hs0?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 672,
+    "address": null
+  },
+  {
+    "Company Name": "Massage Envy",
+    "link": "https://www.google.com/maps/place/Massage+Envy/data=!4m7!3m6!1s0x89e4858d91f50b37:0x5c81bdfca301de53!8m2!3d42.058157!4d-71.069438!16s%2Fg%2F1trxfqfv!19sChIJNwv1kY2F5IkRU94Bo_y9gVw?authuser=0&hl=en&rclk=1",
+    "stars": 4.0,
+    "reviews": 83,
+    "address": null
+  },
+  {
+    "Company Name": "Self Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Self+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e46f926660d599:0xdc699fbe91640ce8!8m2!3d42.0871899!4d-71.4104937!16s%2Fg%2F1tgdv4lg!19sChIJmdVgZpJv5IkR6Axkkb6fadw?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 64,
+    "address": null
+  },
+  {
+    "Company Name": "Elite Medspa + Wellness Center",
+    "link": "https://www.google.com/maps/place/Elite+Medspa+%2B+Wellness+Center/data=!4m7!3m6!1s0x89e379caed5d1c0f:0x8d86ec31ec40728a!8m2!3d42.2826916!4d-71.2366392!16s%2Fg%2F11bw21g987!19sChIJDxxd7cp544kRinJA7DHsho0?authuser=0&hl=en&rclk=1",
+    "website": "https://www.mindbodyonline.com/explore/locations/elite-aesthetics-needham-ma?hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9VFPDvcVkMn4-7yz68S4ncTAd_yTIDvvhQLOmTOUBcmxVbidsVbniXQI8UPAun3M2pcVkx5XPi25PqZrWX-jajVj0tSvw%3D%3D",
+    "stars": 4.8,
+    "reviews": 120,
+    "address": null
+  },
+  {
+    "Company Name": "Privé Skin Care",
+    "link": "https://www.google.com/maps/place/Priv%C3%A9+Skin+Care/data=!4m7!3m6!1s0x89e37cc575df9e95:0x9e00054429045af3!8m2!3d42.1508509!4d-71.0086241!16s%2Fg%2F11cn9m7dg8!19sChIJlZ7fdcV844kR81oEKUQFAJ4?authuser=0&hl=en&rclk=1",
+    "stars": 3.3,
+    "reviews": 42,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e381c36e06bb09:0x80cacd7c2c3f1ff4!8m2!3d42.2929499!4d-71.2346693!16s%2Fg%2F11kf6cwc7p!19sChIJCbsGbsOB44kR9B8_LHzNyoA?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/3ede7fa5-8f92-4c79-822d-36da27d83bb8?booking_source=booknow&booking_medium=google&hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9WxFcudJH70cxln1niE99Wsa8NZa7PYd4sxUNdm3q2psO93d9l-hRRqcfBa2L32VXLWLeKpNfvHMc4ZHhjRHBGYjJ-A9w%3D%3D",
+    "stars": 4.7,
+    "reviews": 24,
+    "address": null
+  },
+  {
+    "Company Name": "Medical Laser Solutions",
+    "link": "https://www.google.com/maps/place/Medical+Laser+Solutions/data=!4m7!3m6!1s0x89e47e270da90105:0x7ee15ec66715bc3c!8m2!3d42.172842!4d-71.1935596!16s%2Fg%2F1tlbq517!19sChIJBQGpDSd-5IkRPLwVZ8Ze4X4?authuser=0&hl=en&rclk=1",
+    "stars": 4.5,
+    "reviews": 11,
+    "address": null
+  },
+  {
+    "Company Name": "Corrections Medi Spa",
+    "link": "https://www.google.com/maps/place/Corrections+Medi+Spa/data=!4m7!3m6!1s0x89e4a1ebd3cd26a5:0x910ab5644cde36fe!8m2!3d42.0946912!4d-70.7936031!16s%2Fg%2F11f3jxyr4m!19sChIJpSbN0-uh5IkR_jbeTGS1CpE?authuser=0&hl=en&rclk=1",
+    "website": "https://phorest.com/book/salons/correctionsmedispa?hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9WQx9i6cVRVoMkO_9eRjkXCNXRihNcbO8uZ8fz7LZGSVRwN7Lf_7UXPk2z2Vy_i7RTRlpk2bAhaFAPb1mbU-0nOdb1PQg%3D%3D",
+    "stars": 5.0,
+    "reviews": 19,
+    "address": null
+  },
+  {
+    "Company Name": "The W MedSpa",
+    "link": "https://www.google.com/maps/place/The+W+MedSpa/data=!4m7!3m6!1s0x89e461b783dc33a3:0x8d597673ba187db3!8m2!3d41.9617115!4d-71.198855!16s%2Fg%2F11l35vpbhx!19sChIJozPcg7dh5IkRs30YunN2WY0?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX1-2YT037bkqbZtfy-xZQf2ilFzqfhaXULk=/services?hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9X2p8ayMLABb5Y0M7qDIHh2GREUTkhWxTsgNO2r99iLggk8AaLaq9aL_O-ppfeghA4lX7cdPWFjD_4YULRriaAhvdQxbg%3D%3D",
+    "stars": 5.0,
+    "reviews": 21,
+    "address": null
+  },
+  {
+    "Company Name": "Rise Aesthetics",
+    "link": "https://www.google.com/maps/place/Rise+Aesthetics/data=!4m7!3m6!1s0x89e49e2c0bafffff:0xf48daf7deb2f3cc3!8m2!3d42.1618043!4d-70.8642791!16s%2Fg%2F11nnwgmk98!19sChIJ__-vCyye5IkRwzwv632vjfQ?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 62,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e37a0c1b112e93:0x9e2b521cd218d0c!8m2!3d42.3503404!4d-71.078891!16s%2Fg%2F1z44rt1r8!19sChIJky4RGwx644kRDI0hzSG14gk?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/9d12c8f8-2c45-4c94-a8a9-a54f6551819b?booking_source=booknow&booking_medium=google&hl=en-US&gei=-IRSZrOEN7aDwbkPjfKl4AM&rwg_token=AJKvS9UCm7IlDu1A_OGQa8TN-Lav-yJB5Sdbhc8O1NIjfK-VmOu6cWLDaT4ra0EyHo5crGVHaIqQTW6QsABPkrHI59rZrezYJA%3D%3D",
+    "stars": 4.1,
+    "reviews": 202,
+    "address": null
+  },
+  {
+    "Company Name": "Skin Tight MedSpa Newton",
+    "link": "https://www.google.com/maps/place/Skin+Tight+MedSpa+Newton/data=!4m7!3m6!1s0x89e383d655227ecd:0x78be2720abed27e8!8m2!3d42.3306172!4d-71.2086663!16s%2Fg%2F11rd_hbxw2!19sChIJzX4iVdaD44kR6CftqyAnvng?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 223,
+    "address": null
+  },
+  {
+    "Company Name": "PK Aesthetics",
+    "link": "https://www.google.com/maps/place/PK+Aesthetics/data=!4m7!3m6!1s0x89e49e0a2c976a93:0x3b32695258add00e!8m2!3d42.1590197!4d-70.9042729!16s%2Fg%2F11bx8b00kc!19sChIJk2qXLAqe5IkRDtCtWFJpMjs?authuser=0&hl=en&rclk=1",
+    "stars": 4.3,
+    "reviews": 12,
+    "address": null
+  },
+  {
+    "Company Name": "All About You Salon and Day Spa",
+    "link": "https://www.google.com/maps/place/All+About+You+Salon+and+Day+Spa/data=!4m7!3m6!1s0x89e4897bc14ed803:0xf24e237a0df20d02!8m2!3d41.9931496!4d-71.1258551!16s%2Fg%2F11j8sxm4nj!19sChIJA9hOwXuJ5IkRAg3yDXojTvI?authuser=0&hl=en&rclk=1",
+    "address": null
+  },
+  {
+    "Company Name": "Renewing Confidence Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Renewing+Confidence+Medical+Aesthetics/data=!4m7!3m6!1s0x89e47dfb53714071:0x97bcb017bb495902!8m2!3d42.1467001!4d-71.2510014!16s%2Fg%2F11q86j1bmy!19sChIJcUBxU_t95IkRAllJuxewvJc?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/1lld1naxmr5ynj/X69GX2P367RKV/start?hl=en-US&gei=-4RSZtqgE4iFwbkP9saPgAQ&rwg_token=AJKvS9W4g_B9J0OMXU4a3Bgn31ueet-cU9BUU0-kqC_norw8gqD4TpghDwomrD5-2O5_cv6rn_2chdOgrzNBrDYJADmddu-hfw%3D%3D",
+    "stars": 5.0,
+    "reviews": 67,
+    "address": null
+  },
+  {
+    "Company Name": "KLS Skincare",
+    "link": "https://www.google.com/maps/place/KLS+Skincare/data=!4m7!3m6!1s0x89e48f05472ae8f5:0x64e732038ed143a5!8m2!3d42.016417!4d-71.0306012!16s%2Fg%2F11kb9k4ltf!19sChIJ9egqRwWP5IkRpUPRjgMy52Q?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19xCk~WAOCaHWpDUPLf4d3VhHz5iMm2ckQ=/services?hl=en-US&gei=-4RSZtqgE4iFwbkP9saPgAQ&rwg_token=AJKvS9WjM0bRJXfZR9uQxy5_jPQqN0HO-vPTa-MO-Mi99GRCKTozOnsmXscD3U2wSY6eGwlZewUMTYXu74OfHdRiG-lxHYSDGg%3D%3D",
+    "stars": 5.0,
+    "reviews": 6,
+    "address": null
+  },
+  {
+    "Company Name": "Glow Med Spa",
+    "link": "https://www.google.com/maps/place/Glow+Med+Spa/data=!4m7!3m6!1s0x89e4bb50ffd6f21b:0xd94e290b5a9ea733!8m2!3d41.9323648!4d-70.6596697!16s%2Fg%2F11r9cjbkn3!19sChIJG_LW_1C75IkRM6eeWgspTtk?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 249,
+    "address": null
+  },
+  {
+    "Company Name": "SEAPORT MEDSPA - South Boston",
+    "link": "https://www.google.com/maps/place/SEAPORT+MEDSPA+-+South+Boston/data=!4m7!3m6!1s0x89e3717642459d1f:0x5d02e6f8afff4f65!8m2!3d42.3356398!4d-71.0428891!16s%2Fg%2F11g_zn75s_!19sChIJH51FQnZx44kRZU__r_jmAl0?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/050931a6-c493-4a55-9912-bba8c7084d81/LDZND05SCBY50/start?hl=en-US&gei=-4RSZtqgE4iFwbkP9saPgAQ&rwg_token=AJKvS9Vn6koe9Cjxwdyp24Rd9af6GTh0H1eeugKPgLXrlFaifVPwPrVpylkqWdQhizPJyYAsJkX6iyJFK-4NrROW6Q9FvY9ErQ%3D%3D",
+    "stars": 4.9,
+    "reviews": 234,
+    "address": null
+  },
+  {
+    "Company Name": "SkinHealth Centers Med Spa Boston",
+    "link": "https://www.google.com/maps/place/SkinHealth+Centers+Med+Spa+Boston/data=!4m7!3m6!1s0x89e37a0b3b06aaff:0xe2f6061efa178de6!8m2!3d42.3524298!4d-71.0731065!16s%2Fg%2F1tql5stx!19sChIJ_6oGOwt644kR5o0X-h4G9uI?authuser=0&hl=en&rclk=1",
+    "website": "https://www.mindbodyonline.com/explore/locations/skinhealth-centers-boston?hl=en-US&gei=-4RSZtqgE4iFwbkP9saPgAQ&rwg_token=AJKvS9U3ubblX103V7MhqKqqKpo-ll5hhImjc4Kgk1XiO-jq75Tc7jYe-Yk3630sGptRAOqB1ki5lArH1EqGD0t0uZQB1iyqjQ%3D%3D",
+    "stars": 4.7,
+    "reviews": 79,
+    "address": null
+  },
+  {
+    "Company Name": "Landa MedSpa",
+    "link": "https://www.google.com/maps/place/Landa+MedSpa/data=!4m7!3m6!1s0x89e388489ed8e64d:0xcf09442300a1569f!8m2!3d42.284083!4d-71.417912!16s%2Fg%2F1vd72b9w!19sChIJTebYnkiI44kRn1ahACNECc8?authuser=0&hl=en&rclk=1",
+    "stars": 4.6,
+    "reviews": 200,
+    "address": null
+  },
+  {
+    "Company Name": "Bellisimo Med Spa and Laser Center",
+    "link": "https://www.google.com/maps/place/Bellisimo+Med+Spa+and+Laser+Center/data=!4m7!3m6!1s0x89e4069771b54da7:0xb0f112e6a4f1b1a4!8m2!3d42.2625843!4d-71.830011!16s%2Fg%2F1td5s8wg!19sChIJp021cZcG5IkRpLHxpOYS8bA?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 72,
+    "address": null
+  },
+  {
+    "Company Name": "Vega Vitality MedSpa & Wellness - Back Bay",
+    "link": "https://www.google.com/maps/place/Vega+Vitality+MedSpa+%26+Wellness+-+Back+Bay/data=!4m7!3m6!1s0x89e37a0c7e9b4c7d:0xca527a53e253f6c6!8m2!3d42.3507558!4d-71.0760374!16s%2Fg%2F11bv5v3phn!19sChIJfUybfgx644kRxvZT4lN6Uso?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 69,
+    "address": null
+  },
+  {
+    "Company Name": "Dream Spa Medical",
+    "link": "https://www.google.com/maps/place/Dream+Spa+Medical/data=!4m7!3m6!1s0x89e37994ca2aa21d:0x271baf0524275355!8m2!3d42.3421412!4d-71.12239!16s%2Fg%2F1q6jyvd_v!19sChIJHaIqypR544kRVVMnJAWvGyc?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 136,
+    "address": null
+  },
+  {
+    "Company Name": "Jewels Day Spa Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Jewels+Day+Spa+Medical+Aesthetics/data=!4m7!3m6!1s0x89e4f835fb30fa4b:0x94a64f15c3fd1096!8m2!3d41.7310706!4d-71.1540372!16s%2Fg%2F1thsbcpy!19sChIJS_ow-zX45IkRlhD9wxVPppQ?authuser=0&hl=en&rclk=1",
+    "stars": 4.6,
+    "reviews": 52,
+    "address": null
+  },
+  {
+    "Company Name": "Nicole Renee Skincare",
+    "link": "https://www.google.com/maps/place/Nicole+Renee+Skincare/data=!4m7!3m6!1s0x89e48140e1a2f479:0xbc59872087946032!8m2!3d42.1383967!4d-71.1455415!16s%2Fg%2F11h4n082jz!19sChIJefSi4UCB5IkRMmCUhyCHWbw?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 9,
+    "address": null
+  },
+  {
+    "Company Name": "H2T Skin and Laser Center",
+    "link": "https://www.google.com/maps/place/H2T+Skin+and+Laser+Center/data=!4m7!3m6!1s0x89e47fedd6826989:0xc6cb0dadbd326c71!8m2!3d42.1910786!4d-71.2015512!16s%2Fg%2F11q8ttgdxb!19sChIJiWmC1u1_5IkRcWwyva0Ny8Y?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 39,
+    "address": null
+  },
+  {
+    "Company Name": "Skin Tight MedSpa Natick",
+    "link": "https://www.google.com/maps/place/Skin+Tight+MedSpa+Natick/data=!4m7!3m6!1s0x89e389e6bcb08167:0x50bac8077fd64ff7!8m2!3d42.2980052!4d-71.3855686!16s%2Fg%2F11jsylv3lz!19sChIJZ4GwvOaJ44kR90_WfwfIulA?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 101,
+    "address": null
+  },
+  {
+    "Company Name": "Newton Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Newton+Medical+Aesthetics/data=!4m7!3m6!1s0x89e383f90fb09899:0xfd4a8375140924f9!8m2!3d42.3099689!4d-71.2150411!16s%2Fg%2F11rpcjq6m6!19sChIJmZiwD_mD44kR-SQJFHWDSv0?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 39,
+    "address": null
+  },
+  {
+    "Company Name": "Zen Zone Spa",
+    "link": "https://www.google.com/maps/place/Zen+Zone+Spa/data=!4m7!3m6!1s0x89e37849e2372a31:0x1065f56859ee2dbb!8m2!3d42.3491953!4d-71.1518043!16s%2Fg%2F1td7d4s8!19sChIJMSo34kl444kRuy3uWWj1ZRA?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 43,
+    "address": null
+  },
+  {
+    "Company Name": "H2T Skin and Laser Center",
+    "link": "https://www.google.com/maps/place/H2T+Skin+and+Laser+Center/data=!4m7!3m6!1s0x89e46323982fffff:0x50fa10e5997a2b22!8m2!3d42.0642488!4d-71.2481687!16s%2Fg%2F11hy_xlj0f!19sChIJ__8vmCNj5IkRIit6meUQ-lA?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 54,
+    "address": null
+  },
+  {
+    "Company Name": "Bello Corpo Med Spa",
+    "link": "https://www.google.com/maps/place/Bello+Corpo+Med+Spa/data=!4m7!3m6!1s0x89e37516788321bf:0x2989e033149ce755!8m2!3d42.5010491!4d-71.1626712!16s%2Fg%2F11b7cv214m!19sChIJvyGDeBZ144kRVeecFDPgiSk?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 82,
+    "address": null
+  },
+  {
+    "Company Name": "Dam Medspa",
+    "link": "https://www.google.com/maps/place/Dam+Medspa/data=!4m7!3m6!1s0x89e37b2a53a80ef3:0xa378a1ff3de3ab50!8m2!3d42.3040985!4d-71.0590225!16s%2Fg%2F11h3mwgj29!19sChIJ8w6oUyp744kRUKvjPf-heKM?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/e1b8355d-0d4f-4541-a209-87c52d9583ee/8H8F4ASMJ1QTR/start?hl=en-US&gei=-4RSZtqgE4iFwbkP9saPgAQ&rwg_token=AJKvS9Vz8grouKaxyy0Wa2KiElt5XAhX1Oo2JfyEHxSTGNlWtDnwj85trAvjuHW25zjs409PxGuwLZeHy2ZHcNfiyMoZ95l2lw%3D%3D",
+    "stars": 5.0,
+    "reviews": 223,
+    "address": null
+  },
+  {
+    "Company Name": "RejuvNP",
+    "link": "https://www.google.com/maps/place/RejuvNP/data=!4m7!3m6!1s0x89e4a1ecd1a1c153:0x5433cc6f69dd4b5f!8m2!3d42.1038944!4d-70.7334575!16s%2Fg%2F11fmh727hk!19sChIJU8Gh0eyh5IkRX0vdaW_MM1Q?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 99,
+    "address": null
+  },
+  {
+    "Company Name": "Coconut Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Coconut+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e371e091b0bd09:0x3a5196a311681ab6!8m2!3d42.3731696!4d-71.0389257!16s%2Fg%2F11p015j80t!19sChIJCb2wkeBx44kRthpoEaOWUTo?authuser=0&hl=en&rclk=1",
+    "address": null
+  },
+  {
+    "Company Name": "Flawless MedSpa",
+    "link": "https://www.google.com/maps/place/Flawless+MedSpa/data=!4m7!3m6!1s0x89e3749cd7f7bc79:0xdca6d82eab6e19be!8m2!3d42.4812422!4d-71.1870432!16s%2Fg%2F1tfpw8lb!19sChIJebz315x044kRvhluqy7Yptw?authuser=0&hl=en&rclk=1",
+    "stars": 4.6,
+    "reviews": 118,
+    "address": null
+  },
+  {
+    "Company Name": "Bella Derma Aesthetics, LLC",
+    "link": "https://www.google.com/maps/place/Bella+Derma+Aesthetics,+LLC/data=!4m7!3m6!1s0x89e362b242614769:0x8391a5b7adba1956!8m2!3d42.2194614!4d-71.0291425!16s%2Fg%2F1tjh0cnb!19sChIJaUdhQrJi44kRVhm6rbelkYM?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19ABc1ctaS4TVDfL93ZhRXLJDCYExskMLI=/services?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9XgUDnnHlI5mxFhyU3JOVr02qHMKzNYqcu2xesljegRwF7Qzsh-ZBemlnOmwJzHRBa3YsUMy7ms9IkW3VYPIjJQFhcgPQ%3D%3D",
+    "stars": 4.8,
+    "reviews": 44,
+    "address": null
+  },
+  {
+    "Company Name": "DeluxeBar",
+    "link": "https://www.google.com/maps/place/DeluxeBar/data=!4m7!3m6!1s0x89e49f1ddc0a561f:0xa47d281caadbb63b!8m2!3d42.1591348!4d-70.8522694!16s%2Fg%2F11l1ygnffv!19sChIJH1YK3B2f5IkRO7bbqhwofaQ?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/19a2944d-d59e-4063-afff-0851b576bf70/9V1TX9VFWZ55Y/start?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9XOLonUuwkIIWyLZybRNYS7oRVksGbc4exjkNZ7Aan22IJmblDBk3eHZKBlRpQfTWkwoelr1r7FNsHR51GpWWfb8Q4NLg%3D%3D",
+    "stars": 4.9,
+    "reviews": 41,
+    "address": null
+  },
+  {
+    "Company Name": "Spa By Fabi",
+    "link": "https://www.google.com/maps/place/Spa+By+Fabi/data=!4m7!3m6!1s0x89e487868afc503d:0x82919080cf742655!8m2!3d42.1230132!4d-71.1796611!16s%2Fg%2F11q8y5v99s!19sChIJPVD8ioaH5IkRVSZ0z4CQkYI?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 86,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e387d030fb5c47:0x457154e24b65482b!8m2!3d42.2835933!4d-71.3716286!16s%2Fg%2F11bymvwtsp!19sChIJR1z7MNCH44kRK0hlS-JUcUU?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/7d41a8fc-0afd-4a6d-88b9-a55fdc5b06ea?booking_source=booknow&booking_medium=google&hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9VxhpX-CHLEEEHKY_4qEvWGCbTNRmjhNBg1sHypofFTukYlVXwf46NB-PVQw4HwzI02Zg6BAe2NLVGnR8FmePsBWgaelw%3D%3D",
+    "stars": 4.6,
+    "reviews": 90,
+    "address": null
+  },
+  {
+    "Company Name": "Sleek Surgical & MedSpa",
+    "link": "https://www.google.com/maps/place/Sleek+Surgical+%26+MedSpa/data=!4m7!3m6!1s0x89e37d44ac508f69:0xbbd126efeef53f03!8m2!3d42.2200679!4d-71.0227078!16s%2Fg%2F11_py3p9k!19sChIJaY9QrER944kRAz_17u8m0bs?authuser=0&hl=en&rclk=1",
+    "stars": 2.0,
+    "reviews": 1,
+    "address": null
+  },
+  {
+    "Company Name": "Infinite Beauty Lounge",
+    "link": "https://www.google.com/maps/place/Infinite+Beauty+Lounge/data=!4m7!3m6!1s0x89e37c17cf3c0001:0x90a600720fd1c495!8m2!3d42.269481!4d-71.0677878!16s%2Fg%2F11ghr0_j4n!19sChIJAQA8zxd844kRlcTRD3IAppA?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 42,
+    "address": null
+  },
+  {
+    "Company Name": "ChicMed Laser & Esthetic Center",
+    "link": "https://www.google.com/maps/place/ChicMed+Laser+%26+Esthetic+Center/data=!4m7!3m6!1s0x89e382d84a8b8bbf:0x3e68d8e24f2fe6f1!8m2!3d42.3721152!4d-71.2369818!16s%2Fg%2F11b66dwdp4!19sChIJv4uLStiC44kR8eYvT-LYaD4?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 122,
+    "address": null
+  },
+  {
+    "Company Name": "Estheva Med Spa",
+    "link": "https://www.google.com/maps/place/Estheva+Med+Spa/data=!4m7!3m6!1s0x89e48d869f49bfd5:0x90f0054de34c4c8d!8m2!3d41.9382134!4d-71.0806507!16s%2Fg%2F11kj02lvvt!19sChIJ1b9Jn4aN5IkRjUxM400F8JA?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/nr8hm2osgadwhe/LK4B4Q0604F7M/start?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9WTP46kSOrGDSOeJ9LoVUbQ49VKBenQMZTJRZx4iuRgPheSmt-M8Hpj6jkbKp2HCg1MjbNkzFqWRjo4HoPyd5ecFOnhIg%3D%3D",
+    "address": null
+  },
+  {
+    "Company Name": "Boston Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Boston+Medical+Aesthetics/data=!4m7!3m6!1s0x89e3708679ca368d:0x81860082838cd053!8m2!3d42.3594001!4d-71.055403!16s%2Fg%2F1tdk65g7!19sChIJjTbKeYZw44kRU9CMg4IAhoE?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19BK4MOFsCCCTCD31jfep75U48RqAwxHUY=/services?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9V-G5IHmccp8Ui8OGdPpf0FIeC34wEcx8ROR7SB7WOheO3D06M83ExTbARSPo-rTtMjbH_TJ_ydS_y-zIMPrNkQe-5cbw%3D%3D",
+    "stars": 4.9,
+    "reviews": 193,
+    "address": null
+  },
+  {
+    "Company Name": "Joli Medical Spa",
+    "link": "https://www.google.com/maps/place/Joli+Medical+Spa/data=!4m7!3m6!1s0x89e4a0d8aa8c8b23:0xc80f93b4b35e7613!8m2!3d42.0916976!4d-70.7054138!16s%2Fg%2F11f3xkttqv!19sChIJI4uMqtig5IkRE3Zes7STD8g?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 26,
+    "address": null
+  },
+  {
+    "Company Name": "Beneath The Skin Facial Spa LLC",
+    "link": "https://www.google.com/maps/place/Beneath+The+Skin+Facial+Spa+LLC/data=!4m7!3m6!1s0x89e49d74629a73b9:0x9e9f13fd7b096e87!8m2!3d42.1185935!4d-70.9494305!16s%2Fg%2F11q1sc3dln!19sChIJuXOaYnSd5IkRh24Je_0Tn54?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19NzTABOTZBcJmLLSyybmGI9nV9YuMl7os=/services?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9VkAafIDmRblzdEJkGqA0jfRMOdrh8r46sBs4PA0SN9gMzHEpCQosQD4GvJihEJYKmZAVOSMeObiHmR-Z8svi_ycsGtDA%3D%3D",
+    "stars": 4.8,
+    "reviews": 19,
+    "address": null
+  },
+  {
+    "Company Name": "Bella Santé | Day Spa, Med Spa, Hair Salon",
+    "link": "https://www.google.com/maps/place/Bella+Sant%C3%A9+%7C+Day+Spa,+Med+Spa,+Hair+Salon/data=!4m7!3m6!1s0x89e386b46965a955:0x3aa30e67ebbb566a!8m2!3d42.3006201!4d-71.2915449!16s%2Fg%2F1thq1qnn!19sChIJVallabSG44kRala762cOozo?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 298,
+    "address": null
+  },
+  {
+    "Company Name": "Glamour Med Spa and Beauty Bar",
+    "link": "https://www.google.com/maps/place/Glamour+Med+Spa+and+Beauty+Bar/data=!4m7!3m6!1s0x89e371e75fea5a29:0x80966dbcaca96243!8m2!3d42.3222789!4d-71.1078549!16s%2Fg%2F11nxqyvvnw!19sChIJKVrqX-dx44kRQ2KprLxtloA?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 41,
+    "address": null
+  },
+  {
+    "Company Name": "H2T Skin and Laser Center",
+    "link": "https://www.google.com/maps/place/H2T+Skin+and+Laser+Center/data=!4m7!3m6!1s0x89e46f0830171043:0xff874fa65629372!8m2!3d42.0673712!4d-71.398843!16s%2Fg%2F11jzwl2kv4!19sChIJQxAXMAhv5IkRcpNiZfp0-A8?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 45,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e45b966687cf19:0xe061dd400109e435!8m2!3d41.7943452!4d-71.324586!16s%2Fg%2F11rrp4mm0d!19sChIJGc-HZpZb5IkRNeQJAUDdYeA?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/ca6fe4cb-5e6f-4dba-8328-a8204b128278?booking_source=booknow&booking_medium=google&hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9V6zRri1ghAZ9lVuMc5Wq9nAbmCG5EnDfaViU1VTNRRRrq7HyqJkiygrS8Exp4T9es6oKEx3hdbwuGmm0oga9MS7To9qQ%3D%3D",
+    "stars": 4.6,
+    "reviews": 132,
+    "address": null
+  },
+  {
+    "Company Name": "SEAPORT MEDSPA - North End",
+    "link": "https://www.google.com/maps/place/SEAPORT+MEDSPA+-+North+End/data=!4m7!3m6!1s0x89e3712e15c52867:0xb5d5a561a669cd37!8m2!3d42.3648782!4d-71.0553714!16s%2Fg%2F11sv_h7wx6!19sChIJZyjFFS5x44kRN81ppmGl1bU?authuser=0&hl=en&rclk=1",
+    "website": "https://squareup.com/appointments/book/050931a6-c493-4a55-9912-bba8c7084d81/LD035QZ201YN5/start?hl=en-US&gei=_YRSZtXNBbydwbkP-9qPgAQ&rwg_token=AJKvS9Wsk_evxPI-XyPsbkg70clOiFQjEWa6CdsN1LpmNBwIHtQmo6gNGB5p1UVpatBx70vRmB2kITy7LwMElMXZqwQ3hUk29A%3D%3D",
+    "stars": 5.0,
+    "reviews": 51,
+    "address": null
+  },
+  {
+    "Company Name": "Skin Esteem Med Spa and Wellness Center",
+    "link": "https://www.google.com/maps/place/Skin+Esteem+Med+Spa+and+Wellness+Center/data=!4m7!3m6!1s0x89e4bca587e908a3:0x320afca2fa22596c!8m2!3d41.9819526!4d-70.730133!16s%2Fg%2F11g8chg9zk!19sChIJowjph6W85IkRbFki-qL8CjI?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 407,
+    "address": null
+  },
+  {
+    "Company Name": "Bella Santé | Day Spa Med Spa",
+    "link": "https://www.google.com/maps/place/Bella+Sant%C3%A9+%7C+Day+Spa+Med+Spa/data=!4m7!3m6!1s0x89e37a74d81d4c1f:0xa02882d304947f1c!8m2!3d42.351907!4d-71.072982!16s%2Fg%2F1tfjm3zh!19sChIJH0wd2HR644kRHH-UBNOCKKA?authuser=0&hl=en&rclk=1",
+    "stars": 4.6,
+    "reviews": 313,
+    "address": null
+  },
+  {
+    "Company Name": "Face Forward Medical Aesthetics Med Spa",
+    "link": "https://www.google.com/maps/place/Face+Forward+Medical+Aesthetics+Med+Spa/data=!4m7!3m6!1s0x89e39f7e27de62f3:0xe0c55ddab5a0f7e0!8m2!3d42.4470998!4d-71.2296477!16s%2Fg%2F11gjx0pzzj!19sChIJ82LeJ36f44kR4PegtdpdxeA?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 135,
+    "address": null
+  },
+  {
+    "Company Name": "Neem Aesthetics & Salon",
+    "link": "https://www.google.com/maps/place/Neem+Aesthetics+%26+Salon/data=!4m7!3m6!1s0x89e370d91b29e707:0x6a0824bfc49de3a7!8m2!3d42.3608079!4d-71.0563448!16s%2Fg%2F11b7fptt8r!19sChIJB-cpG9lw44kRp-OdxL8kCGo?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 87,
+    "address": null
+  },
+  {
+    "Company Name": "Forever Young Laser and Skin Center",
+    "link": "https://www.google.com/maps/place/Forever+Young+Laser+and+Skin+Center/data=!4m7!3m6!1s0x89e383d173d13fbf:0x3ea9474f9f58c4fa!8m2!3d42.3146257!4d-71.246417!16s%2Fg%2F1tdf2ch5!19sChIJvz_Rc9GD44kR-sRYn09HqT4?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 73,
+    "address": null
+  },
+  {
+    "Company Name": "Hingham Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/Hingham+Medical+Aesthetics/data=!4m7!3m6!1s0x89e361351ced8e33:0x53887541dc52c92a!8m2!3d42.2436457!4d-70.8855066!16s%2Fg%2F11k74_9kzt!19sChIJM47tHDVh44kRKslS3EF1iFM?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 25,
+    "address": null
+  },
+  {
+    "Company Name": "Medical Spa by Nurse Fiona",
+    "link": "https://www.google.com/maps/place/Medical+Spa+by+Nurse+Fiona/data=!4m7!3m6!1s0x89e388f61d9bb735:0x9c97d9811ec79847!8m2!3d42.298219!4d-71.413085!16s%2Fg%2F11bw62hxfr!19sChIJNbebHfaI44kRR5jHHoHZl5w?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX1~yx4D6oO9tMDfTu~~4xyC17PFETiXPP4U=/services?hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9XedEtNpR1Y9NeDlpu9zf_-LoOk8BkAqMPMmmnXMVZINYOyZgk3lnpk19Yt2QhZWXiMbcXR9Op_Y81WpzCnSsobL0Fnng%3D%3D",
+    "stars": 4.7,
+    "reviews": 31,
+    "address": null
+  },
+  {
+    "Company Name": "Mariel’s Laser & Electrology",
+    "link": "https://www.google.com/maps/place/Mariel%E2%80%99s+Laser+%26+Electrology/data=!4m7!3m6!1s0x89e48fd9130b3bbb:0x577549a5e26821e9!8m2!3d42.0151038!4d-71.0395043!16s%2Fg%2F11h38l4t08!19sChIJuzsLE9mP5IkR6SFo4qVJdVc?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19c~L0lYem~H-13DG29sp2ZYgvXM7SKueM=/services?hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9UMYus5G75oAP-HxUJ1tJOF7PVZnzcNPSeixdtqDhD_0FpndkRAMyWyLb1gXk6mCQ4r76hglkTpNq4EfvEC7_Griela_g%3D%3D",
+    "stars": 5.0,
+    "reviews": 30,
+    "address": null
+  },
+  {
+    "Company Name": "Greta Hall Skincare",
+    "link": "https://www.google.com/maps/place/Greta+Hall+Skincare/data=!4m7!3m6!1s0x89e361731673c8dd:0xc308ecd11a7fc65c!8m2!3d42.2417426!4d-70.8895905!16s%2Fg%2F11qbck47j9!19sChIJ3chzFnNh44kRXMZ_GtHsCMM?authuser=0&hl=en&rclk=1",
+    "website": "https://www.vagaro.com/googlemap/U2FsdGVkX19VE9JDvmGqyrYdXXH-bpYE6yA57NoZLKI=/services?hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9UGm9inbDzprH7cZOw7U-nu-yNMivN6i2_4SokjuoclAf7D21Dz2BBBlDa9sYp6ToVlXEykptWXP0w6M_y_B25l4vjSFw%3D%3D",
+    "stars": 5.0,
+    "reviews": 48,
+    "address": null
+  },
+  {
+    "Company Name": "REALR Laser & Skincare Medspa",
+    "link": "https://www.google.com/maps/place/REALR+Laser+%26+Skincare+Medspa/data=!4m7!3m6!1s0x89e3791426eac2c7:0xfdefaefaa0aae67!8m2!3d42.3530543!4d-71.1304092!16s%2Fg%2F11h1k8_sk1!19sChIJx8LqJhR544kRZ64Kqu_63g8?authuser=0&hl=en&rclk=1",
+    "website": "https://dashboard.boulevard.io/booking/businesses/e7f63fb0-7ef7-4f4b-b4c5-124db5b0cb82/widget?location_wl=35a7468a-78ad-44d0-920e-7a6a442cfa10&hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9XgUPKq8331wffNH-GmUrCpa1TWUeX4AsC9xs5AzQWvMSr52168O5F5U5BRzHzC6SEcuRKWBDVKeIbb1mX7wHITlRa3YA%3D%3D",
+    "stars": 4.6,
+    "reviews": 102,
+    "address": null
+  },
+  {
+    "Company Name": "Thrive Beauty Spa",
+    "link": "https://www.google.com/maps/place/Thrive+Beauty+Spa/data=!4m7!3m6!1s0x89e373e02a240c33:0x1aa0720ee223167c!8m2!3d42.4284349!4d-71.0559896!16s%2Fg%2F11hgj_65w1!19sChIJMwwkKuBz44kRfBYj4g5yoBo?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 24,
+    "address": null
+  },
+  {
+    "Company Name": "Laser and Skincare Co",
+    "link": "https://www.google.com/maps/place/Laser+and+Skincare+Co/data=!4m7!3m6!1s0x89e37d10f4013a87:0x5c90f8ab1ca142ee!8m2!3d42.2231255!4d-71.0345558!16s%2Fg%2F11g68x7l6f!19sChIJhzoB9BB944kR7kKhHKv4kFw?authuser=0&hl=en&rclk=1",
+    "stars": 4.8,
+    "reviews": 22,
+    "address": null
+  },
+  {
+    "Company Name": "VIO Med Spa",
+    "link": "https://www.google.com/maps/place/VIO+Med+Spa/data=!4m7!3m6!1s0x89e39f13972111d9:0x5154ba689527d84a!8m2!3d42.4861707!4d-71.2125637!16s%2Fg%2F11rwlvxkmw!19sChIJ2REhlxOf44kRStgnlWi6VFE?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 196,
+    "address": null
+  },
+  {
+    "Company Name": "3D Medical Aesthetics",
+    "link": "https://www.google.com/maps/place/3D+Medical+Aesthetics/data=!4m7!3m6!1s0x89e37b8846724a5f:0x5f560a6bd29f0943!8m2!3d42.298947!4d-71.0305432!16s%2Fg%2F11g_z4y6ws!19sChIJX0pyRoh744kRQwmf0msKVl8?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 45,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e39d3229b89f75:0x8f500692f22d2f87!8m2!3d42.4119214!4d-71.2330007!16s%2Fg%2F11rrp4bm27!19sChIJdZ-4KTKd44kRhy8t8pIGUI8?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/f58402ae-98ce-4437-a4af-48cec0d2fb42?booking_source=booknow&booking_medium=google&hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9WX4_b0_afe9J4KoD5_oyYTg_qWJx6qPvl8Fn8b_h_djiiUMX32cgWUyhjIRzJIpCM_iWD4T5u6sPTj1EHuYwG-ERffZw%3D%3D",
+    "stars": 4.5,
+    "reviews": 43,
+    "address": null
+  },
+  {
+    "Company Name": "DeluxeBar Medical Aesthetics Boston",
+    "link": "https://www.google.com/maps/place/DeluxeBar+Medical+Aesthetics+Boston/data=!4m7!3m6!1s0x89e37b292295f1cb:0x9991ca81665884f5!8m2!3d42.3445328!4d-71.0744415!16s%2Fg%2F11fmtv2f8x!19sChIJy_GVIil744kR9YRYZoHKkZk?authuser=0&hl=en&rclk=1",
+    "stars": 4.9,
+    "reviews": 144,
+    "address": null
+  },
+  {
+    "Company Name": "SkinHealth Centers Wellesley Med Spa",
+    "link": "https://www.google.com/maps/place/SkinHealth+Centers+Wellesley+Med+Spa/data=!4m7!3m6!1s0x89e383e29edd7243:0x553300551c25b2f8!8m2!3d42.3135713!4d-71.2735402!16s%2Fg%2F1tcv_ffj!19sChIJQ3LdnuKD44kR-LIlHFUAM1U?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 10,
+    "address": null
+  },
+  {
+    "Company Name": "Regeneris Medspa & Cosmetic Surgery",
+    "link": "https://www.google.com/maps/place/Regeneris+Medspa+%26+Cosmetic+Surgery/data=!4m7!3m6!1s0x89e480376b7a242f:0xf05d6b43a7081c83!8m2!3d42.2008538!4d-71.1554183!16s%2Fg%2F11gfb9ydlz!19sChIJLyR6azeA5IkRgxwIp0NrXfA?authuser=0&hl=en&rclk=1",
+    "stars": 4.1,
+    "reviews": 17,
+    "address": null
+  },
+  {
+    "Company Name": "Unique Boutique Your Day of Beauty",
+    "link": "https://www.google.com/maps/place/Unique+Boutique+Your+Day+of+Beauty/data=!4m7!3m6!1s0x89e38395efe1af43:0x2ac6a96148fcc561!8m2!3d42.3280679!4d-71.1969057!16s%2Fg%2F11t7tb3zct!19sChIJQ6_h75WD44kRYcX8SGGpxio?authuser=0&hl=en&rclk=1",
+    "website": "https://link.marketinghubtech.com/widget/group/rjXS9wO4uDqUxWmAapHF?hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9Vcem-AtqOPtA6hRfKM2veHn4KQjba3EJE-UiEOMEnCTLxDbQD5UzKWs7PkYWXTvlOFDSlqVgkqlKr_XSnRyYCgCDR7xA%3D%3D",
+    "stars": 5.0,
+    "reviews": 52,
+    "address": null
+  },
+  {
+    "Company Name": "Ideal Image Newton",
+    "link": "https://www.google.com/maps/place/Ideal+Image+Newton/data=!4m7!3m6!1s0x89e383bcddcb036f:0x3129e5add3b0bc18!8m2!3d42.3131813!4d-71.2125408!16s%2Fg%2F11h28x332m!19sChIJbwPL3byD44kRGLyw063lKTE?authuser=0&hl=en&rclk=1",
+    "stars": 4.2,
+    "reviews": 337,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e311668de37433:0x36fc0eaf1361e9c6!8m2!3d42.5654257!4d-70.9360859!16s%2Fg%2F1jkyyl9bv!19sChIJM3TjjWYR44kRxulhE68O_DY?authuser=0&hl=en&rclk=1",
+    "website": "https://lasermdmedspa.zenoti.com/webstoreNew/services/8e547154-9826-4b04-be74-e9df203a4daa?booking_source=booknow&booking_medium=google&hl=en-US&gei=_4RSZpCiE42wwt0PyfqZ2AM&rwg_token=AJKvS9WpbKP4Vqy86FAakwN4Zf64dmSh4yx-iGhlgUYXNOG8M5okL-ztVq0N289Y97R9TtyXRVJaJbc_sOnD6LWB3C6yUPrG7w%3D%3D",
+    "stars": 4.4,
+    "reviews": 173,
+    "address": null
+  },
+  {
+    "Company Name": "Laser MD Medspa",
+    "link": "https://www.google.com/maps/place/Laser+MD+Medspa/data=!4m7!3m6!1s0x89e3f50b9596bd89:0x7fe030469ca21606!8m2!3d42.3406364!4d-71.5903073!16s%2Fg%2F11q4bws0dr!19sChIJib2WlQv144kRBhainEYw4H8?authuser=0&hl=en&rclk=1",
+    "stars": 4.7,
+    "reviews": 50,
+    "address": null
+  },
+  {
+    "Company Name": "Fresh Medical Aesthetics Inc",
+    "link": "https://www.google.com/maps/place/Fresh+Medical+Aesthetics+Inc/data=!4m7!3m6!1s0x89e4bbd6809b2da1:0xaf4a2827cf74557c!8m2!3d41.9274139!4d-70.6456756!16s%2Fg%2F11gmgv3h91!19sChIJoS2bgNa75IkRfFV0zycoSq8?authuser=0&hl=en&rclk=1",
+    "stars": 5.0,
+    "reviews": 77,
+    "address": null
+  }
+]
