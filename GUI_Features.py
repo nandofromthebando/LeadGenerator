@@ -8,7 +8,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Color, Rectangle
 import json
-
+import pandas as pd
 #Popups from other project refer to documentation.
 
 from kivy.uix.popup import Popup
@@ -174,6 +174,8 @@ class BackgroundLabel(Label):
         self.rect.size = self.size
 
 class PreviewData(Popup):
+    json_data = StringProperty()
+
     def __init__(self, **kwargs):
         super(PreviewData, self).__init__(**kwargs)
         self.title = "Preview of Last Scrape"
@@ -194,8 +196,8 @@ class PreviewData(Popup):
         self.layout.add_widget(load_button)
 
         # Create a ScrollView to hold the Label (initially empty)
-        self.scroll_view = ScrollView()
-        self.json_label = Label(text='', size_hint_y=None, halign='right')  # Align text centered to the right
+        self.scroll_view = ScrollView(size_hint=(1, 1))
+        self.json_label = Label(text='', size_hint_y=None, halign='right', valign='top', text_size=(None, None)) 
         self.json_label.bind(texture_size=self.json_label.setter('size'))
         self.scroll_view.add_widget(self.json_label)
         self.layout.add_widget(self.scroll_view)
@@ -210,9 +212,17 @@ class PreviewData(Popup):
     def load_file(self, instance):
         file_name = self.file_input.text
         try:
-            with open(file_name, 'r', encoding='utf-8') as f:
-                json_data = json.load(f)
-            json_string = json.dumps(json_data, indent=2)
-            self.json_label.text = json_string
+            # Load JSON data into pandas DataFrame
+            df = pd.read_json(file_name)
+            # Convert DataFrame to string
+            df_string = df.to_string()
+            self.json_data = df_string
         except Exception as e:
-            self.json_label.text = f"Error loading file: {str(e)}"
+            self.json_data = f"Error loading file: {str(e)}"
+
+class PreviewLabel(ScrollView):
+    def __init__(self, **kwargs):
+        super(PreviewLabel, self).__init__(**kwargs)
+        self.label = Label(text_size=(None, None), size_hint=(None, None), size=(800, 50))
+        self.label.bind(size=self.label.setter('text_size'))
+        self.add_widget(self.label)
