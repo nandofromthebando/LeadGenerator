@@ -100,21 +100,6 @@ def custom_google_search(query, language="en", region="US"):
             except Exception:
                 pass
 
-            try:
-                text_content = item.text
-                # Regular expression to match addresses within <span> tags
-                address_pattern = r'/html/body/div[2]/div[3]/div[8]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[7]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[2]/span[2]'
-                matches = re.findall(address_pattern, text_content)
-
-                # Extract matched addresses
-                addresses = [match for match in matches]
-                unique_addresses = list(set(addresses))
-
-                # Store the first unique address found in the data dictionary
-                data['address'] = unique_addresses[0] if unique_addresses else None
-            except Exception:
-                pass
-
             if (data.get('Company Name')):
                 results.append(data)
             
@@ -123,7 +108,4 @@ def custom_google_search(query, language="en", region="US"):
     finally:
         time.sleep(60)
         driver.quit()
-
-query = "medical salons ma"
-custom_google_search(query)
 

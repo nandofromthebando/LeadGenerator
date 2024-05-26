@@ -7,6 +7,7 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Color, Rectangle
+import json
 
 #Popups from other project refer to documentation.
 
@@ -173,30 +174,45 @@ class BackgroundLabel(Label):
         self.rect.size = self.size
 
 class PreviewData(Popup):
-    # For the Preveiw Data button
-    def __init__(self, df, **kwargs):
+    def __init__(self, **kwargs):
         super(PreviewData, self).__init__(**kwargs)
-        self.title = "Preveiw of Last Scrape"
-        self.size_hint = (0.8, 0.8)
-        
+        self.title = "Preview of Last Scrape"
+        self.size_hint = (None, None)
+        self.size = (900, 700)
+        self.auto_dismiss = True
+
         # Create a layout for the content of the popup
-        content_layout = BoxLayout(orientation='vertical', padding=10, spacing=10)
-        
-        # Convert DataFrame to string and create a Label
-        df_string = df.to_string()
-        df_label = Label(text=df_string, size_hint_y=None)
-        df_label.bind(texture_size=df_label.setter('size'))
-        
-        # Create a ScrollView to hold the Label
-        scroll_view = ScrollView(size_hint=(1, 1))
-        scroll_view.add_widget(df_label)
-        
-        content_layout.add_widget(scroll_view)
-        
+        self.layout = BoxLayout(orientation='vertical', padding=20, spacing=20)
+
+        # Create a TextInput for file name
+        self.file_input = TextInput(hint_text='Enter JSON file name', size_hint_y=None, height=50)
+        self.layout.add_widget(self.file_input)
+
+        # Create a button to load the file
+        load_button = Button(text="Load File", size_hint=(1, None), height=50, background_color=(0.2, 0.6, 0.2, 1))  # Set background color to green
+        load_button.bind(on_press=self.load_file)
+        self.layout.add_widget(load_button)
+
+        # Create a ScrollView to hold the Label (initially empty)
+        self.scroll_view = ScrollView()
+        self.json_label = Label(text='', size_hint_y=None, halign='right')  # Align text centered to the right
+        self.json_label.bind(texture_size=self.json_label.setter('size'))
+        self.scroll_view.add_widget(self.json_label)
+        self.layout.add_widget(self.scroll_view)
+
         # Add a close button
-        close_button = Button(text="Close", size_hint=(1, None), height=50)
+        close_button = Button(text="Close", size_hint=(1, None), height=50, background_color=(0.2, 0.6, 0.2, 1))  # Set background color to green
         close_button.bind(on_press=self.dismiss)
-        
-        content_layout.add_widget(close_button)
-        
-        self.add_widget(content_layout)
+        self.layout.add_widget(close_button)
+
+        self.content = self.layout
+
+    def load_file(self, instance):
+        file_name = self.file_input.text
+        try:
+            with open(file_name, 'r', encoding='utf-8') as f:
+                json_data = json.load(f)
+            json_string = json.dumps(json_data, indent=2)
+            self.json_label.text = json_string
+        except Exception as e:
+            self.json_label.text = f"Error loading file: {str(e)}"

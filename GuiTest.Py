@@ -1,6 +1,3 @@
-# Test Gui imported from another project, going to document as much as possible
-# Maake sure do download all the required dependencies using pip3
-
 import os
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -10,7 +7,7 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget  # Import Widget for separators
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
-from GUI_Features import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel
+from GUI_Features import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel , PreviewData
 from threading import Thread
 from test import custom_google_search
 
@@ -49,6 +46,8 @@ class LeadGenerator(App):
         menu_preview_data_button.text_size = menu_preview_data_button.size
         menu_preview_data_button.halign = 'center'
         menu_preview_data_button.valign = 'middle'
+        menu_preview_data_button.bind(on_press=self.preview_data)  # Bind the method to the button press event
+
 
         menu_exit_button = Button(text='Exit', size_hint=(None, None), size=(100, 60), on_press=self.quit_app, background_color =(0.2, 0.6, 0.8, 1))
         menu_exit_button.text_size = menu_exit_button.size
@@ -200,12 +199,13 @@ class LeadGenerator(App):
         search_popup.open()
         search_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
 
-    def Find_Sites_to_Scrape(self, instance):
-        # Create an instance of Sites to Scrape
-        find_sites = Sites_to_Scrape()
+    def preview_data(self, instance):
+        # Create an instance of PreviewData popup
+        preview_popup = PreviewData()
 
-        # Open the AnalyzePopup
-        find_sites.open()
+        # Open the PreviewData popup
+        preview_popup.open()
+
     def check_quit(self, instance):
         # Check if the user confirmed quitting
         if instance.is_confirmed:
