@@ -7,6 +7,7 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Color, Rectangle
+from kivy.properties import StringProperty
 import json
 import pandas as pd
 #Popups from other project refer to documentation.
