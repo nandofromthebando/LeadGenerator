@@ -9,6 +9,8 @@ import re
 import json
 import time
 
+# get email information 
+
 def custom_google_search(query, language="en", region="US"):
     try:
             # Configure Chrome options to deny geolocation permissions

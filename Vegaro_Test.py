@@ -9,6 +9,8 @@ import re
 import json
 import time
 
+# basi search needs search and location find staffing info
+
 def custom_google_search(query, language="en", region="US"):
     try:
             # Configure Chrome options to deny geolocation permissions
