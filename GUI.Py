@@ -102,7 +102,7 @@ class LeadGenerator(App):
 
         sublink_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
         sublink_layout.add_widget(BackgroundLabel(text='Google Map Search:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), foreground_color=(1, 1, 1, 1))
         sublink_layout.add_widget(self.sublink_url)
 
         sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
@@ -114,7 +114,7 @@ class LeadGenerator(App):
 
         filename_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
         filename_layout.add_widget(BackgroundLabel(text='File to Delete:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.csv_filename_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        self.csv_filename_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), foreground_color=(1, 1, 1, 1))
         filename_layout.add_widget(self.csv_filename_entry)
 
         filename_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
