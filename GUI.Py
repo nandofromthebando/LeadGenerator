@@ -102,7 +102,7 @@ class LeadGenerator(App):
 
         sublink_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
         sublink_layout.add_widget(BackgroundLabel(text='Google Map Search:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        self.sublink_url = TextInput(text='', font_size='18sp', background_color=(0.3, 0.3, 0.3, 1))
         sublink_layout.add_widget(self.sublink_url)
 
         sublink_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
@@ -114,11 +114,10 @@ class LeadGenerator(App):
 
         filename_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
         filename_layout.add_widget(BackgroundLabel(text='File to Delete:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.csv_filename_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1))
+        self.csv_filename_entry = TextInput(text='', font_size='18sp', background_color=(0.3, 0.3, 0.3, 1))
         filename_layout.add_widget(self.csv_filename_entry)
 
         filename_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        filename_buttons_layout.add_widget(Button(text='Delete File', on_press=self.delete_file, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         filename_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_csv_input, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         filename_layout.add_widget(filename_buttons_layout)
 
