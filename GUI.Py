@@ -7,9 +7,9 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget  # Import Widget for separators
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
-from GUI_Features import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel , PreviewData
+from GUIPopups import CustomPopup , SearchPopup, CustomPopup, BackgroundLabel , PreviewData
 from threading import Thread
-from test import custom_google_search
+from GoogleMapsBot import custom_google_search
 
 class LeadGenerator(App):
 
