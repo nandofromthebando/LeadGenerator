@@ -11,7 +11,7 @@ import time
 
 # basi search needs search and location find staffing info
 
-def custom_google_search(query, language="en", region="US"):
+def VaragroSearch():
     try:
             # Configure Chrome options to deny geolocation permissions
         chrome_options = Options()
@@ -26,7 +26,7 @@ def custom_google_search(query, language="en", region="US"):
         driver = webdriver.Chrome(options=chrome_options)
 
         # Construct the Google search URL
-        url = f"https://www.google.com/maps/search/?q={'+'.join(query.split())}&hl={language}&gl={region}"
+        url = f"https://www.vagaro.com/book/medical-salons/salem--ma"
 
         # Open the Google search page
         driver.get(url)
@@ -111,5 +111,5 @@ def custom_google_search(query, language="en", region="US"):
         time.sleep(60)
         driver.quit()
 
-'''query = "medical salons 02301"
-custom_google_search(query)'''
+
+VaragroSearch()
