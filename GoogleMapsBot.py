@@ -10,7 +10,26 @@ import json
 import time
 
 # get email information 
-
+def execute_javascript_to_click_links(driver, container_selector):
+    script = f"""
+        function clickAllLinks(containerSelector) {{
+            const container = document.querySelector(containerSelector);
+            if (container) {{
+                const links = container.querySelectorAll('a');
+                links.forEach((link, index) => {{
+                    setTimeout(() => {{
+                        link.click();
+                        console.log(`Clicked link ${{index + 1}}: ${{link.href}}`);
+                    }}, index * 1000);
+                }});
+            }} else {{
+                console.log('Container not found');
+            }}
+        }}
+        clickAllLinks('{container_selector}');
+    """
+    driver.execute_script(script)
+    
 def custom_google_search(query, language="en", region="US"):
     try:
             # Configure Chrome options to deny geolocation permissions

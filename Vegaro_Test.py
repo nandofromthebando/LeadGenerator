@@ -35,7 +35,7 @@ def VaragroSearch():
         rows = []
 
         # This is what scrolls through the pages
-        scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[role="feed"]' )
+        scrollable_div = driver.find_element(By.CSS_SELECTOR,'div[role="generic"]' )
         # JavaScript code to be executed
         scroll_script = """
           var scrollableDiv = arguments[0];
