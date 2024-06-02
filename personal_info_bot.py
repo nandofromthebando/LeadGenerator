@@ -25,7 +25,7 @@ def search_for_info(query, language="en", region="US"):
         driver = webdriver.Chrome(options=chrome_options)
 
         # Construct the Google search URL
-        url = f"https://www.google.com/search/?q={'+'.join(query.split())}&hl={language}&gl={region}"
+        url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
 
         # Open the Google search page
         driver.get(url)
@@ -110,5 +110,5 @@ def search_for_info(query, language="en", region="US"):
         time.sleep(60)
         driver.quit()
 
-query = "medical salons 02301"
+query = "test business"
 search_for_info(query)
