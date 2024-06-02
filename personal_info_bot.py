@@ -35,14 +35,20 @@ def search_for_info(query, language="en", region="US"):
     finally:
         driver.quit()
 
+def read_json_file(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+
 def search_json_query(category):
+    json_query = read_json_file('results.json')
     if category not in ["Company Name", "reviews", "stars"]:
         raise ValueError(f"Invalid category '{category}'. Must be one of 'Company Name', 'reviews', or 'stars'.")
 
     if category == "reviews" or category == "stars":
         results = [shop for shop in json_query]
     else:
-        results = [shop for shop in json_query if value.lower() in shop[category].lower()]
+        results = [shop for shop in json_query]
     
     return results
 
