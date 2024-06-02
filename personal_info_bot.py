@@ -9,28 +9,8 @@ import re
 import json
 import time
 
-# Click script untested
-def execute_javascript_to_click_links(driver, container_selector):
-    script = f"""
-        function clickAllLinks(containerSelector) {{
-            const container = document.querySelector(containerSelector);
-            if (container) {{
-                const links = container.querySelectorAll('a');
-                links.forEach((link, index) => {{
-                    setTimeout(() => {{
-                        link.click();
-                        console.log(`Clicked link ${{index + 1}}: ${{link.href}}`);
-                    }}, index * 1000);
-                }});
-            }} else {{
-                console.log('Container not found');
-            }}
-        }}
-        clickAllLinks('{container_selector}');
-    """
-    driver.execute_script(script)
     
-def custom_google_search(query, language="en", region="US"):
+def search_for_info(query, language="en", region="US"):
     try:
             # Configure Chrome options to deny geolocation permissions
         chrome_options = Options()
@@ -45,7 +25,7 @@ def custom_google_search(query, language="en", region="US"):
         driver = webdriver.Chrome(options=chrome_options)
 
         # Construct the Google search URL
-        url = f"https://www.google.com/maps/search/?q={'+'.join(query.split())}&hl={language}&gl={region}"
+        url = f"https://www.google.com/search/?q={'+'.join(query.split())}&hl={language}&gl={region}"
 
         # Open the Google search page
         driver.get(url)
@@ -130,5 +110,5 @@ def custom_google_search(query, language="en", region="US"):
         time.sleep(60)
         driver.quit()
 
-'''query = "medical salons 02301"
-custom_google_search(query)'''
+query = "medical salons 02301"
+search_for_info(query)
