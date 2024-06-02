@@ -32,7 +32,7 @@ def execute_javascript_to_click_links(driver, container_selector):
     
 def custom_google_search(query, language="en", region="US"):
     try:
-            # Configure Chrome options to deny geolocation permissions
+        # Configure Chrome options to deny geolocation permissions
         chrome_options = Options()
         chrome_options.add_argument("--disable-notifications")
         chrome_options.add_argument("--disable-infobars")
