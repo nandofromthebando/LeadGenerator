@@ -35,5 +35,16 @@ def search_for_info(query, language="en", region="US"):
     finally:
         driver.quit()
 
+def search_json_query(category):
+    if category not in ["Company Name", "reviews", "stars"]:
+        raise ValueError(f"Invalid category '{category}'. Must be one of 'Company Name', 'reviews', or 'stars'.")
+
+    if category == "reviews" or category == "stars":
+        results = [shop for shop in json_query]
+    else:
+        results = [shop for shop in json_query if value.lower() in shop[category].lower()]
+    
+    return results
+
 query = "test business"
 search_for_info(query)
