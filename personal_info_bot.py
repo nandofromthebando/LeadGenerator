@@ -9,6 +9,9 @@ import re
 import json
 import time
 
+
+# Need to make a for loop that iterates through all the results 
+# Separate searches for each business
     
 def search_for_info(query, language="en", region="US"):
     try:
