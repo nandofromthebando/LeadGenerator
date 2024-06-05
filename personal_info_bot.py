@@ -16,18 +16,54 @@ def configure_chrome_options():
     chrome_options.add_argument("--disable-popup-blocking")
     chrome_options.add_argument("--allow-file-access-from-files")
     chrome_options.add_argument("--disable-geolocation")
+
+    # Add preferences to block geolocation and notifications
+    prefs = {
+        "profile.default_content_setting_values.geolocation": 2,  # 2 means block
+        "profile.default_content_setting_values.notifications": 2  # 2 means block
+    }
+    chrome_options.add_experimental_option("prefs", prefs)
+
     return chrome_options
 
 def search_for_info(query, language="en", region="US"):
+    driver = None
     try:
         chrome_options = configure_chrome_options()
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        
+        # Construct the Google search URL
         url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
         driver.get(url)
+        
+        # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
-        time.sleep(5)  # Allow some time for the page to load completely
+        
+        # Wait for a while to ensure the page is fully loaded
+        time.sleep(3)
+        
+        # Handle potential geolocation pop-up
+        try:
+            alert = WebDriverWait(driver, 5).until(EC.alert_is_present())
+            alert.dismiss()
+        except Exception as e:
+            pass  # No alert found
+
+        # Find the first search result link and click it
+        first_result = driver.find_element(By.XPATH, "//div[@id='search']//a/h3/..")
+        first_result.click()
+        
+        # Wait for the new page to load
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+        
+        # Additional time to let the user see the opened page (can be adjusted or removed as needed)
+        time.sleep(5)
+        
+    except Exception as e:
+        print(f"An error occurred: {e}")
     finally:
-        driver.quit()
+        if driver:
+            driver.quit()
 
 def read_json_file(file_path):
     with open(file_path, 'r') as file:
@@ -47,4 +83,5 @@ file_path = 'results.json'
 # Read search queries from JSON and perform searches
 data_search = search_json_query(file_path, 'Company Name')
 for search in data_search:
-    search_for_info(search)
+    query = f"{search} founder"
+    search_for_info(query)
