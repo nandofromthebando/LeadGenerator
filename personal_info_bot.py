@@ -31,14 +31,9 @@ def search_for_info(query, language="en", region="US"):
         # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
 
-        # Click not now -- inprogress
-
+        # Click not now 
         try:
-            # Replace the CSS selector with the one you provided
-            block_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, 'g-raised-button.Hg3NO.VDgVie.swJ5ic.f2HKG.ttBXeb'))
-            )
-            block_button.click()
+                driver.find_element((By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button')).click()
         except Exception as e:
             print(f"Location request pop-up did not appear or there was an error: {e}")
 
