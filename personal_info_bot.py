@@ -31,14 +31,14 @@ def search_for_info(query, language="en", region="US"):
         # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
 
-        # Click not now 
+        # Click not now for geolocation
         try:
-                driver.find_element((By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button')).click()
+            driver.find_element((By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button')).click()
         except Exception as e:
             print(f"Location request pop-up did not appear or there was an error: {e}")
-
-
-    
+   
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
+        
         # Find the first search result link and click it
         first_result = driver.find_element(By.XPATH, "//div[@id='search']//a/h3/..")
         first_result.click()
