@@ -44,15 +44,22 @@ def search_for_info(query, language="en", region="US"):
             EC.presence_of_all_elements_located((By.XPATH, "//div[@id='search']//a/h3/.."))
         )
 
+        # List of target domains
+        target_domains = ["https://www.instagram.com/", "https://www.linkedin.com/", "https://twitter.com/"]
+
         # Loop through search results and click on the first matching result
-        target_domain = "https://www.instagram.com/"  # Change this to your target domain
         for result in search_results:
             url = result.get_attribute("href")
-            if target_domain in url:
-                result.click()
-                break
-        
-        # Wait for the new page to load
+            for target_domain in target_domains:
+                if target_domain in url:
+                    result.click()
+                    time.sleep(5)
+                    break
+            else:
+                continue  # only executed if the inner loop did NOT break
+            break  # only executed if the inner loop DID break
+                # Wait for the new page to load
+                
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         
         # Additional time to let the user see the opened page (can be adjusted or removed as needed)
