@@ -89,5 +89,5 @@ file_path = 'results.json'
 # Read search queries from JSON and perform searches
 data_search = search_json_query(file_path, 'Company Name')
 for search in data_search:
-    query = f"{search} founder"
+    query = f"{search}  owner contact info"
     search_for_info(query)
