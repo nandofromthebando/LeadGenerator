@@ -8,29 +8,21 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 import time
 
-def configure_chrome_options():
-    chrome_options = Options()
-    chrome_options.add_argument("--disable-notifications")
-    chrome_options.add_argument("--disable-infobars")
-    chrome_options.add_argument("--disable-extensions")
-    chrome_options.add_argument("--disable-popup-blocking")
-    chrome_options.add_argument("--allow-file-access-from-files")
-    chrome_options.add_argument("--disable-geolocation")
-
-    # Add preferences to block geolocation and notifications
-    prefs = {
-        "profile.default_content_setting_values.geolocation": 2,  # 2 means block
-        "profile.default_content_setting_values.notifications": 2  # 2 means block
-    }
-    chrome_options.add_experimental_option("prefs", prefs)
-
-    return chrome_options
 
 def search_for_info(query, language="en", region="US"):
     driver = None
     try:
-        chrome_options = configure_chrome_options()
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        chrome_options = Options()
+        chrome_options.add_argument("--disable-notifications")
+        chrome_options.add_argument("--disable-infobars")
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-popup-blocking")
+        chrome_options.add_argument("--allow-file-access-from-files")
+        chrome_options.add_argument("--disable-geolocation")
+        chrome_options.add_experimental_option("prefs", {
+        "profile.default_content_setting_values.geolocation": 2
+        })
+        driver = webdriver.Chrome(options=chrome_options)
         
         # Construct the Google search URL
         url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
