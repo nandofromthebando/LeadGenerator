@@ -30,8 +30,9 @@ def search_for_info(query, language="en", region="US"):
 
         # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
+
+        # Click not now -- inprogress
         
-        # Click not now
         driver.find_element(By.CSS_SELECTOR,'g-raised-button.Hg3NO.VDgVie.swJ5ic.f2HKG.ttBXeb').click()
 
 
