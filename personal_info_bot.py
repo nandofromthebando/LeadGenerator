@@ -8,9 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 import time
 
-
 def search_for_info(query, language="en", region="US"):
     driver = None
+    info_list = []
     try:
         chrome_options = Options()
         chrome_options.add_argument("--disable-notifications")
@@ -22,7 +22,7 @@ def search_for_info(query, language="en", region="US"):
         chrome_options.add_experimental_option("prefs", {
         "profile.default_content_setting_values.geolocation": 2
         })
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         
         # Construct the Google search URL
         url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
@@ -33,7 +33,7 @@ def search_for_info(query, language="en", region="US"):
 
         # Click not now for geolocation
         try:
-            driver.find_element((By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button')).click()
+            driver.find_element(By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button').click()
         except Exception as e:
             print(f"Location request pop-up did not appear or there was an error: {e}")
    
@@ -52,6 +52,7 @@ def search_for_info(query, language="en", region="US"):
             url = result.get_attribute("href")
             for target_domain in target_domains:
                 if target_domain in url:
+                    info_list.append({"query": query, "link": url})
                     result.click()
                     time.sleep(5)
                     break
@@ -70,6 +71,8 @@ def search_for_info(query, language="en", region="US"):
     finally:
         if driver:
             driver.quit()
+    
+    return info_list
 
 def read_json_file(file_path):
     with open(file_path, 'r') as file:
@@ -83,11 +86,21 @@ def search_json_query(file_path, category):
     
     return [shop[category] for shop in json_query if category in shop]
 
+def save_to_json(data, file_path):
+    with open(file_path, 'w') as file:
+        json.dump(data, file, indent=4)
+
 # Path to the JSON file
 file_path = 'results.json'
+output_file_path = 'info.json'
 
 # Read search queries from JSON and perform searches
 data_search = search_json_query(file_path, 'Company Name')
+info_data = []
+
 for search in data_search:
-    query = f"{search}  owner contact info"
-    search_for_info(query)
+    query = f"{search} owner contact info"
+    info_data.extend(search_for_info(query))
+
+# Save the collected info to a new JSON file
+save_to_json(info_data, output_file_path)
