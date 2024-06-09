@@ -27,7 +27,13 @@ def search_for_info(query, language="en", region="US"):
         # Construct the Google search URL
         url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
         driver.get(url)
-        
+        try:
+            block_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, '//*[@id="_YrplZpL7KODcptQP2rTM4QI_12"]/div[2]/span/div/div[2]/div[3]/g-raised-button'))  
+            )
+            block_button.click()
+        except:
+            print("Location request pop-up did not appear")
         # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
         
