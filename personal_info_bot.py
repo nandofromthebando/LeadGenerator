@@ -32,8 +32,15 @@ def search_for_info(query, language="en", region="US"):
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
 
         # Click not now -- inprogress
-        
-        driver.find_element(By.CSS_SELECTOR,'g-raised-button.Hg3NO.VDgVie.swJ5ic.f2HKG.ttBXeb').click()
+
+        try:
+            # Replace the CSS selector with the one you provided
+            block_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, 'g-raised-button.Hg3NO.VDgVie.swJ5ic.f2HKG.ttBXeb'))
+            )
+            block_button.click()
+        except Exception as e:
+            print(f"Location request pop-up did not appear or there was an error: {e}")
 
 
     
