@@ -38,10 +38,19 @@ def search_for_info(query, language="en", region="US"):
             print(f"Location request pop-up did not appear or there was an error: {e}")
    
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
-        
-        # Find the first search result link and click it
-        first_result = driver.find_element(By.XPATH, "//div[@id='search']//a/h3/..")
-        first_result.click()
+
+        # Wait for search results to load
+        search_results = WebDriverWait(driver, 10).until(
+            EC.presence_of_all_elements_located((By.XPATH, "//div[@id='search']//a/h3/.."))
+        )
+
+        # Loop through search results and click on the first matching result
+        target_domain = "openai.com"  # Change this to your target domain
+        for result in search_results:
+            url = result.get_attribute("href")
+            if target_domain in url:
+                result.click()
+                break
         
         # Wait for the new page to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
