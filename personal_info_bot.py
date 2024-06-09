@@ -45,7 +45,7 @@ def search_for_info(query, language="en", region="US"):
         )
 
         # Loop through search results and click on the first matching result
-        target_domain = "openai.com"  # Change this to your target domain
+        target_domain = "https://www.instagram.com/"  # Change this to your target domain
         for result in search_results:
             url = result.get_attribute("href")
             if target_domain in url:
