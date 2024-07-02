@@ -81,11 +81,8 @@ class LeadGenerator(App):
         buttons_layout.add_widget(features_button)
         root_layout.add_widget(buttons_layout)
 
-        # Horizontal separator
-        root_layout.add_widget(Widget(size_hint_y=None, height=2))
-
-        personal_scrape_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.7), spacing=10, padding=(0, 10))
-        personal_scrape_layout.add_widget(BackgroundLabel(text='Get Personal Contact Info:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
+        personal_scrape_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.5), spacing=10, height = 60, padding=(0, 10))
+        personal_scrape_layout.add_widget(BackgroundLabel(text='Get Personal Contact Info:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=70, halign='center'))
         self.personal_info_message = Label(text="Get personal information on the latest scrape.\n\nIf you haven't already please make an initial search (specify location)", 
                                     font_size='16sp', 
                                     color=(1, 1, 1, 1), 
