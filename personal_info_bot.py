@@ -8,22 +8,23 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 import time
 
-def search_for_info(query, language="en", region="US"):
-    driver = None
+def setup_driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_argument("--disable-infobars")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_argument("--allow-file-access-from-files")
+    chrome_options.add_argument("--disable-geolocation")
+    chrome_options.add_experimental_option("prefs", {
+        "profile.default_content_setting_values.geolocation": 2
+    })
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    return driver
+
+def search_for_info(driver, query, language="en", region="US"):
     info_list = []
     try:
-        chrome_options = Options()
-        chrome_options.add_argument("--disable-notifications")
-        chrome_options.add_argument("--disable-infobars")
-        chrome_options.add_argument("--disable-extensions")
-        chrome_options.add_argument("--disable-popup-blocking")
-        chrome_options.add_argument("--allow-file-access-from-files")
-        chrome_options.add_argument("--disable-geolocation")
-        chrome_options.add_experimental_option("prefs", {
-        "profile.default_content_setting_values.geolocation": 2
-        })
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
-        
         # Construct the Google search URL
         url = f"https://www.google.com/search?q={'+'.join(query.split())}&hl={language}&gl={region}"
         driver.get(url)
@@ -31,9 +32,10 @@ def search_for_info(query, language="en", region="US"):
         # Wait for the search results to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search")))
 
-        # Click not now for geolocation
+        # Handle geolocation pop-up if it appears
         try:
-            driver.find_element(By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button').click()
+            location_button = driver.find_element(By.XPATH, '/html/body/div[5]/div/div[8]/div/div[2]/span/div/div[2]/div[3]/g-raised-button')
+            location_button.click()
         except Exception as e:
             print(f"Location request pop-up did not appear or there was an error: {e}")
    
@@ -50,17 +52,13 @@ def search_for_info(query, language="en", region="US"):
         # Loop through search results and click on the first matching result
         for result in search_results:
             url = result.get_attribute("href")
-            for target_domain in target_domains:
-                if target_domain in url:
-                    info_list.append({"query": query, "link": url})
-                    result.click()
-                    time.sleep(5)
-                    break
-            else:
-                continue  # only executed if the inner loop did NOT break
-            break  # only executed if the inner loop DID break
-                # Wait for the new page to load
-                
+            if any(target_domain in url for target_domain in target_domains):
+                info_list.append({"query": query, "link": url})
+                result.click()
+                time.sleep(5)
+                break  # Stop after the first matching result
+
+        # Wait for the new page to load
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         
         # Additional time to let the user see the opened page (can be adjusted or removed as needed)
@@ -68,9 +66,6 @@ def search_for_info(query, language="en", region="US"):
         
     except Exception as e:
         print(f"An error occurred: {e}")
-    finally:
-        if driver:
-            driver.quit()
     
     return info_list
 
@@ -90,17 +85,24 @@ def save_to_json(data, file_path):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
-# Path to the JSON file
-file_path = 'results.json'
-output_file_path = 'info.json'
+def main():
+    file_path = 'results.json'
+    output_file_path = 'info.json'
+    
+    # Read search queries from JSON and perform searches
+    data_search = search_json_query(file_path, 'Company Name')
+    info_data = []
 
-# Read search queries from JSON and perform searches
-data_search = search_json_query(file_path, 'Company Name')
-info_data = []
+    driver = setup_driver()
+    try:
+        for search in data_search:
+            query = f"{search} owner contact info"
+            info_data.extend(search_for_info(driver, query))
+    finally:
+        driver.quit()
 
-for search in data_search:
-    query = f"{search} owner contact info"
-    info_data.extend(search_for_info(query))
+    # Save the collected info to a new JSON file
+    save_to_json(info_data, output_file_path)
 
-# Save the collected info to a new JSON file
-save_to_json(info_data, output_file_path)
+if __name__ == "__main__":
+    main()
