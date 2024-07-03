@@ -134,15 +134,6 @@ class SearchPopup(Popup):
             self.message_label.text = "Please select file type and enter filename"
 
 
-        
-        for site in news_sites:
-            label = Label(text=site, font_size='18sp', color=(1, 1, 1, 1), halign='center', valign='middle')
-            grid_layout.add_widget(label)
-            
-        # Create a scroll view to contain the grid layout
-        scroll_view = ScrollView(size_hint=(1, 1))
-        scroll_view.add_widget(grid_layout)
-
         # Add close button
         self.close_button = Button(
             text="Close",

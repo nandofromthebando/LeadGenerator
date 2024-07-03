@@ -19,7 +19,7 @@ def setup_driver():
     chrome_options.add_experimental_option("prefs", {
         "profile.default_content_setting_values.geolocation": 2
     })
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
     return driver
 
 def search_for_info(driver, query, language="en", region="US"):
