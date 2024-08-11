@@ -1,5 +1,6 @@
 import os
-import json
+import subprocess
+import platform
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
@@ -47,6 +48,7 @@ class LeadGenerator(App):
         menu_clear_search_button.text_size = menu_clear_search_button.size
         menu_clear_search_button.halign = 'center'
         menu_clear_search_button.valign = 'middle'
+        menu_clear_search_button.bind(on_press=self.delete_file)
 
         menu_preview_data_button = Button(text='Preview Data', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
         menu_preview_data_button.text_size = menu_preview_data_button.size
@@ -122,14 +124,15 @@ class LeadGenerator(App):
 
 
     def delete_file(self, instance):
+        file_path = 'results.csv'
 
         # Function to delete the specified file
-        if os.path.exists((self.csv_filename_entry.text)):
-            os.remove((self.csv_filename_entry.text))
-            popup = CustomPopup("File Deleted", f"File '{os.path.basename((self.csv_filename_entry.text))}' deleted successfully.")
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            popup = CustomPopup("File Deleted", f"File '{os.path.basename(file_path)}' deleted successfully.")
             popup.open()
         else:
-            popup = CustomPopup("File Not Found", f"File '{os.path.basename((self.csv_filename_entry.text))}' not found.")
+            popup = CustomPopup("File Not Found", f"File '{os.path.basename(file_path)}' not found.")
             popup.open()
 
     def quit_app(self, instance):
@@ -171,13 +174,18 @@ class LeadGenerator(App):
         search_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
 
     def preview_data(self, instance):
-        try:
-            with open('results.json', 'r') as file:
-                data = json.load(file)  # Load the JSON data
-                return data  # Return the JSON data
-        except FileNotFoundError:
-            print(f"File '{'results.json'}' not found.")
-            return None
+        file_path = 'results.csv'
+        
+        if os.path.exists(file_path):
+            if platform.system() == "Windows":
+                os.startfile(file_path)
+            elif platform.system() == "Darwin":  # macOS
+                subprocess.call(('open', file_path))
+            else:  # Linux and others
+                subprocess.call(('xdg-open', file_path))
+        else:
+            popup = CustomPopup("Error", f"File '{file_path}' not found.")
+            popup.open()
 
 
     def check_quit(self, instance):
