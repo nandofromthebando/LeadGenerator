@@ -81,22 +81,6 @@ class LeadGenerator(App):
         buttons_layout.add_widget(features_button)
         root_layout.add_widget(buttons_layout)
 
-        personal_scrape_layout = BoxLayout(orientation='vertical', size_hint=(1, 0.5), spacing=10, height = 60, padding=(0, 10))
-        root_layout.add_widget(BackgroundLabel(text='Get Personal Contact Info:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=70, halign='center'))
-        self.personal_info_message = Label(text="\n\n\nGet personal information on the latest scrape.\n\nIf you haven't already please make an initial search (specify location)", 
-                                    font_size='16sp', 
-                                    color=(1, 1, 1, 1), 
-                                    halign='center',
-                                    size_hint=(1, None), 
-                                    height=60)
-        root_layout.add_widget(self.personal_info_message)
-        personal_scrape_buttons_layout = BoxLayout(size_hint=(1, None), height=60, spacing=10)
-        personal_scrape_buttons_layout.add_widget(Button(text='Start New', on_press=self.clear_prog, background_color =(0.2, 0.6, 0.8, 1)))
-
-        personal_scrape_buttons_layout.add_widget(Button(text='Get Data', on_press=self.searchfunc_popup, background_color =(0.2, 0.6, 0.8, 1)))
-        personal_scrape_layout.add_widget(personal_scrape_buttons_layout)
-        root_layout.add_widget(personal_scrape_layout)
-
         sublink_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
         sublink_layout.add_widget(BackgroundLabel(text='Google Map Search:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
         self.sublink_url = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), foreground_color=(1, 1, 1, 1))
@@ -109,17 +93,7 @@ class LeadGenerator(App):
         sublink_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_linkscraper, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
         sublink_layout.add_widget(sublink_buttons_layout)
 
-        filename_layout = BoxLayout(orientation='horizontal', spacing=10, size_hint=(1, None), height=60)
-        filename_layout.add_widget(BackgroundLabel(text='Vagaro Search:', font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center'))
-        self.csv_filename_entry = TextInput(text='', font_size='16sp', background_color=(0.3, 0.3, 0.3, 1), foreground_color=(1, 1, 1, 1))
-        filename_layout.add_widget(self.csv_filename_entry)
-
-        filename_buttons_layout = BoxLayout(size_hint=(1, None), size=(900, 60), spacing=10)
-        filename_buttons_layout.add_widget(Button(text='Clear', on_press=self.clear_csv_input, size_hint_y=None, height=60, background_color =(0.2, 0.6, 0.8, 1)))
-        filename_layout.add_widget(filename_buttons_layout)
-
         root_layout.add_widget(sublink_layout)
-        root_layout.add_widget(filename_layout)
 
         return root_layout
 
