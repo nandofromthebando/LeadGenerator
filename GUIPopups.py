@@ -148,7 +148,6 @@ class SearchPopup(Popup):
         # Layout setup
         self.layout = BoxLayout(orientation='vertical', spacing=20, size_hint=(1, 1))
         self.layout.add_widget(self.message_label)
-        self.layout.add_widget(scroll_view)
         self.layout.add_widget(self.close_button)
 
         self.content = self.layout

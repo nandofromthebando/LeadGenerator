@@ -37,10 +37,10 @@ class LeadGenerator(App):
         menu_layout = BoxLayout(size_hint=(1, None), padding=10, spacing=10)
 
         # Menu buttons
-        menu_statistics_button = Button(text='Statistics', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
-        menu_statistics_button.text_size = menu_statistics_button.size
-        menu_statistics_button.halign = 'center'
-        menu_statistics_button.valign = 'middle'
+        menu_clear_search_button = Button(text='Clear Last Search', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
+        menu_clear_search_button.text_size = menu_clear_search_button.size
+        menu_clear_search_button.halign = 'center'
+        menu_clear_search_button.valign = 'middle'
 
         menu_preview_data_button = Button(text='Preview Data', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
         menu_preview_data_button.text_size = menu_preview_data_button.size
@@ -56,7 +56,7 @@ class LeadGenerator(App):
 
         status_bar = Label(text='Ready', size_hint=(1, None), height=60, color=(1, 1, 1, 1))
 
-        menu_layout.add_widget(menu_statistics_button)
+        menu_layout.add_widget(menu_clear_search_button)
         menu_layout.add_widget(menu_preview_data_button)
         menu_layout.add_widget(menu_exit_button)
         menu_layout.add_widget(status_bar)
