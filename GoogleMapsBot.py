@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import re
-import json
+import csv
 import time
 
 # Click script untested
@@ -124,8 +124,10 @@ def custom_google_search(query, language="en", region="US"):
             if (data.get('Company Name')):
                 results.append(data)
             
-        with open('results.json', 'w', encoding='utf-8') as f:
-                json.dump(results, f, ensure_ascii=False,  indent=2)
+        with open('results.csv', 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=['Company Name', 'link', 'website', 'stars', 'reviews'])
+            writer.writeheader()
+            writer.writerows(results)
     finally:
         time.sleep(60)
         driver.quit()

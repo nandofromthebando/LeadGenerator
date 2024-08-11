@@ -156,7 +156,7 @@ class LeadGenerator(App):
     def Features_Message(self, instance):
         # Create and display another custom popup
         popup = CustomPopup("Features available", "Various Functions:\n\n"
-                                                  "- Statistics: Perform statistical analysis of your created data, as well as visualization of availabe data. \n"
+                                                  "- Clear Last Search: Clears the last recent search and deletes the .csv file. \n"
                                                   "- Preview Data: Choose from the data files that you have created to see what you have available or veiw the \n   raw data in .csv, , .xml, .xlx format for furhter analysis \n"
                                                   "- Exit to quit.\n\n"
                                                    "Enjoy finding leads with Lead Generator!\n\n\n\n")
