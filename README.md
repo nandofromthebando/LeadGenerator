@@ -34,3 +34,6 @@ Main application class that builds the UI and handles user interactions.
 - Scrapes informatiom about location, reviews, rating, and website.
 - Saves to a .csv file.
 
+## GUI Popups Class:
+
+- Handles all the popup functions used in the GUI class.
