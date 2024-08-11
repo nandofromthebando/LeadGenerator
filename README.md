@@ -20,7 +20,7 @@ The Lead Generator application is designed to help users generate leads in their
 
 ## Usage
 Run the application:
-python lead_generator.py
+python GUI.py
 
 Use the interface to enter your search query and generate leads.
 Code Structure
