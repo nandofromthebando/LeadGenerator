@@ -130,5 +130,3 @@ def custom_google_search(query, language="en", region="US"):
         time.sleep(60)
         driver.quit()
 
-'''query = "medical salons 02301"
-custom_google_search(query)'''

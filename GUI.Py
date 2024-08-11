@@ -1,4 +1,5 @@
 import os
+import json
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
@@ -21,7 +22,7 @@ class LeadGenerator(App):
         Window.clearcolor = (0.133, 0.133, 0.133, 1)
 
         # Main layout
-        root_layout = BoxLayout(orientation='vertical', size_hint=(1, 1), padding=20, spacing=10)
+        root_layout = BoxLayout(orientation='vertical', size_hint=(1, None), padding=5, spacing=5)
         root_layout.bind(minimum_height=root_layout.setter('height'))
 
         # Align widgets vertically centered
@@ -33,8 +34,13 @@ class LeadGenerator(App):
         # Center the layout on the screen
         root_layout.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
 
+        # Guide message
+        welcome_message = "Welcome to Lead Generator!"
+        welcome_label = BackgroundLabel(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
+        root_layout.add_widget(welcome_label)
+
         # Menu bar
-        menu_layout = BoxLayout(size_hint=(1, None), padding=10, spacing=10)
+        menu_layout = BoxLayout(size_hint=(1, None), padding=5, spacing=10)
 
         # Menu buttons
         menu_clear_search_button = Button(text='Clear Last Search', size_hint=(None, None), size=(250, 60), background_color =(0.2, 0.6, 0.8, 1))
@@ -64,11 +70,6 @@ class LeadGenerator(App):
 
         # Horizontal separator
         root_layout.add_widget(Widget(size_hint_y=None, height=5))
-
-        # Guide message
-        welcome_message = "Welcome to Lead Generator!"
-        welcome_label = BackgroundLabel(text=welcome_message, font_size='24sp', bold=True, color=(1, 1, 1, 1), size_hint=(1, None), height=60, halign='center')
-        root_layout.add_widget(welcome_label)
 
         # Add buttons to create custom popups
         start_here_button = Button(text='Start Here', size_hint=(None, None), size=(150, 60), background_color =(0.2, 0.6, 0.8, 1))
@@ -170,11 +171,14 @@ class LeadGenerator(App):
         search_popup.bind(on_dismiss=lambda instance, data: print(f"Filename: {data[0]}, File Type: {data[1]}"))
 
     def preview_data(self, instance):
-        # Create an instance of PreviewData popup
-        preview_popup = PreviewData()
+        try:
+            with open('results.json', 'r') as file:
+                data = json.load(file)  # Load the JSON data
+                return data  # Return the JSON data
+        except FileNotFoundError:
+            print(f"File '{'results.json'}' not found.")
+            return None
 
-        # Open the PreviewData popup
-        preview_popup.open()
 
     def check_quit(self, instance):
         # Check if the user confirmed quitting
