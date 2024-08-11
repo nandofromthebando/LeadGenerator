@@ -149,9 +149,9 @@ class LeadGenerator(App):
         # Create and display the custom popup
         popup = CustomPopup("Guide:", "This application helps you generate leads in your area\n\n"
                                        "To use the application:\n"
-                                       "- Enter the zip code of the of the area that you want to locate leads.\n"
+                                       "- Enter a search for a type of business and a location that you want to search in.\n"
                                        "- Click on the 'Search' button to locate the leads in the area.\n"
-                                       "- It will ask if you want to save the data to a spreadsheet in XLS, CSV, or XML format\n"
+                                       "- It will ask if you want to save the data to a spreadsheet in CSV format\n"
                                        "- The delete file option will allow you to delete older files that you have created in this folder.\n\n"
                                        "Enjoy finding leads with Lead Generator!\n\n\n\n")
         popup.open()
@@ -160,7 +160,7 @@ class LeadGenerator(App):
         # Create and display another custom popup
         popup = CustomPopup("Features available", "Various Functions:\n\n"
                                                   "- Clear Last Search: Clears the last recent search and deletes the .csv file. \n"
-                                                  "- Preview Data: Choose from the data files that you have created to see what you have available or veiw the \n   raw data in .csv, , .xml, .xlx format for furhter analysis \n"
+                                                  "- Preview Data: Choose from the data files that you have created to see what you have available or veiw the \n   raw data in .csv further analysis \n"
                                                   "- Exit to quit.\n\n"
                                                    "Enjoy finding leads with Lead Generator!\n\n\n\n")
         popup.open()

@@ -6,7 +6,7 @@ The Lead Generator application is designed to help users generate leads in their
 
 ## Features
 - **Clear Last Search**: Clears the last recent search and deletes the `results.csv` file.
-- **Preview Data**: Allows users to preview the data files they have created, viewing raw data in `.csv`, `.xml`, or `.xlsx` format for further analysis.
+- **Preview Data**: Allows users to preview the data files they have created, viewing raw data in `.csv` format for further analysis.
 - **Exit**: Exits the application.
 - **Google Map Search**: Enter a search query to locate leads in a specific area.
 
